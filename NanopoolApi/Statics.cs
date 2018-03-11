@@ -2,7 +2,7 @@
 {
 	public static class Statics
 	{
-		public static readonly string PoolTypeHolder = "<<POOLTYPE>>";
+		public static readonly string PoolTypeHolder = "eth";
 		private static readonly string BaseApiUrl = $"https://api.nanopool.org/v1/{PoolTypeHolder}/";
 
 		//Miners

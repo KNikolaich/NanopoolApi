@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanopoolApi", "NanopoolApi\NanopoolApi.csproj", "{44B0BE36-5939-414F-A167-AD22F139AFC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanopoolApi", "NanopoolApi\NanopoolApi.csproj", "{24B0896B-8233-4586-8F5E-56F2BC400EA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoMonitor", "NanoMonitor\NanoMonitor.csproj", "{72AFB050-E7BC-4A64-932F-B8E98BC14105}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{44B0BE36-5939-414F-A167-AD22F139AFC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44B0BE36-5939-414F-A167-AD22F139AFC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44B0BE36-5939-414F-A167-AD22F139AFC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44B0BE36-5939-414F-A167-AD22F139AFC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24B0896B-8233-4586-8F5E-56F2BC400EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B0896B-8233-4586-8F5E-56F2BC400EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B0896B-8233-4586-8F5E-56F2BC400EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B0896B-8233-4586-8F5E-56F2BC400EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
