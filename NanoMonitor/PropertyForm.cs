@@ -1,42 +1,94 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NanopoolApi;
+using NanopoolApi.Response;
 
 namespace NanoMonitor
 {
     public partial class PropertyForm : Form
     {
         Nanopool nanopool = new Nanopool(Statics.PoolType.ETH);
+        private bool _bShow;
+        private readonly TimeSpan DELAY = new TimeSpan(1, 0, 0); //задержка
+
         public PropertyForm()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            _timerRefreshData.Start();
+            base.OnLoad(e);
         }
 
         private void _bTest_Click(object sender, EventArgs e)
         {
             using (StatusForm statusForm = new StatusForm())
             {
-                var balance = nanopool.GetAccountBalance(_tbAddress.Text);
-                statusForm.Value = balance;
+                statusForm.Value = SaveBalance();
                 if (statusForm.ShowDialog() == DialogResult.OK)
                 {
-                    if (balance.Status)
-                    {
-                        NanoDataBase.Domain.Save(balance);
-                    }
                     //var charts = nanopool.GetWorkersAverageHashrate(_tbAddress.Text);
-
                 }
-
             }
+        }
+
+        private FloatValue SaveBalance()
+        {
+            var balance = nanopool.GetAccountBalance(_tbAddress.Text);
             
+            if (balance.Status)
+            {
+                NanoDataBase.Domain.Save(balance, DELAY);
+            }
+            return balance;
+        }
+
+        private void _settingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowOrHide();
+        }
+
+        private void ShowOrHide()
+        {
+            if (_bShow)
+            {
+                Hide();
+                _bShow = false;
+            }
+            else
+            {
+                Show();
+                _bShow = true;
+            }
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            _bShow = true;
+            base.OnShown(e);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void _bSave_Click(object sender, EventArgs e)
+        {
+            //Hide();
+            ShowOrHide();
+        }
+
+        private void _timerRefreshData_Tick(object sender, EventArgs e)
+        {
+            SaveBalance();
+        }
+
+        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            ShowOrHide();
         }
     }
 }

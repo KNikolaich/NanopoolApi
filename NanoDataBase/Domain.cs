@@ -13,16 +13,28 @@ namespace NanoDataBase
 {
     public class Domain
     {
-        public static void Save(FloatValue balanceRaw)
+        public static void Save(FloatValue balanceRaw, TimeSpan tsDelta)
         {
             Balance balance = new Balance(Session);
-            long id = GetNewId<Balance>();
+            var lastBalance = GetNewId<Balance>();
             balance.Map(balanceRaw);
-            balance.Id = id;
-            balance.Save();
+            if (lastBalance != null)
+            {
+                if (lastBalance.Date.Add(tsDelta) <= DateTime.Now)
+                {
+                    balance.Id = lastBalance.Id + 1;
+                    balance.Save();
+                }
+            }
+            else
+            {
+                balance.Id = 0;
+                balance.Save();
+            }
+
         }
 
-        private static long GetNewId<TXpObj>() where TXpObj : XPLiteObject, IPersistentBase
+        private static TXpObj GetNewId<TXpObj>() where TXpObj : XPLiteObject, IPersistentBase
         {
             List<TXpObj> objects;
             try
@@ -35,12 +47,7 @@ namespace NanoDataBase
                 // LogHolder.LogError(e);
                 throw;
             }
-            var obj = objects.FirstOrDefault();
-            if (obj != null)
-            {
-                return obj.Id + 1;
-            }
-            return 0;
+            return objects.FirstOrDefault();
         }
 
 
