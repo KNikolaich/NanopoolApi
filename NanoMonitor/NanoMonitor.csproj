@@ -89,6 +89,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NanoDataBase\NanoDataBase.csproj">
+      <Project>{02f0ebcb-2be2-4023-8d6e-eb0efa0d9a88}</Project>
+      <Name>NanoDataBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NanopoolApi\NanopoolApi.csproj">
       <Project>{24b0896b-8233-4586-8f5e-56f2bc400ea2}</Project>
       <Name>NanopoolApi</Name>

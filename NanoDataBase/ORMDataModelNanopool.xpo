@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="fae3224b-0706-456d-bd58-c4dda95422a6" dbName="Nanopool" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9Ik1TU3FsU2VydmVyIj4NCiAgPHBhcmFtZXRlcj4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0ic2VydmVyIiB2YWx1ZT0iKGxvY2FsZGIpXE1TU1FMTG9jYWxEQiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0iZGF0YWJhc2UiIHZhbHVlPSJOYW5vcG9vbCIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0idXNlSW50ZWdyYXRlZFNlY3VyaXR5IiB2YWx1ZT0iVHJ1ZSIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0idXNlcmlkIiB2YWx1ZT0iIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJwYXNzd29yZCIgdmFsdWU9IiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0icmVhZCBvbmx5IiB2YWx1ZT0iMSIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0iZ2VuZXJhdGVDb25uZWN0aW9uSGVscGVyIiB2YWx1ZT0idHJ1ZSIgLz4NCiAgPC9wYXJhbWV0ZXI+DQo8L0RldkV4cHJlc3NYcG9HZW5lcmF0b3JTZXR0aW5ncz4=" namespace="NanoDataBase.Nanopool" connectionString="XpoProvider=MSSqlServer;data source=(localdb)\MSSQLLocalDB;integrated security=SSPI;initial catalog=Nanopool" dataBaseShemaInfo="H4sIAAAAAAAEAMVW226bQBB9r9R/QDwH2MVsINHaUYOdyEpbWYkT9c1a2MFBhcVlwXb+vgvGxNjOpVWVPtlz5szOnJm9QC/WaaItIZdxJvo6NpF+Mfj8iV4yCXdFlrM5jEWUaYol5Plaxn39sSgW55a1Wq3MVc/M8rllI4StH9++3oWPkDIjFrJgIgS9jeJvR+kqq6bRKQsSkFXK2t4iO8AW0r6zFPr6JUvqXK1X+Sd5nLL86QaetLG8F/GvUhGLvOywFM/PkjIVsgMqWBZ5LOaDMadW87cTZR2GUes55S58LAEdXm5gbfMzfVqo6saiOHX0RtOY66pwtVZTtWa9Y4VhVqqubJd4qDzvjWQFTOO0ja3sbuRRzWPBYQ0H4mq4WWlyM5s1A5rNejZ2Rj5yCfFHBNu+/upwXhzPmwM6Xm6FNsV1hB2qoFdZDvFcqP7LnS5Qq952z/ZI1HZVOrUao3UOY1kB9wuumjmIWCIVqQu23Osy5mM+cE/dXhR6yAiDEBlOD4FxZhNiEMdzsBOdeqiHqNWQ2+BGaeeAvAgrRzWYjbPu347Zob0m7k8F7oqEiCuZpGc43OOGEwaeEYRuZECPBDYiTmCf4gOROxP9G52bs/DxWhHmNo48z0BBpAYKHhjMjbjBuUuY4wQBJuRfa63O7scr5TgiAebMwLaSq6bKjTMWeYbtYRe8CBPm8ncrPYY2h69FGvuZQqvHCvgkz8IabA4ufdi8bIMhLEfrRQ5SmqpFzFxi18QnWuPuV5bpmuhE88ukKHPoCyiLnCUn2kRdq3GoLoNp9hNEP/A8jl3icBchcM4YtbYp6nx+wqQEWQ3gtmy7S79wVRpE8bq9UCrorow60C2k2RL2iRt0n+urB3pwL8JHJuagmlvbm9Ycq0G9idkC8iL+z7W9UAa9BgG52l5+lqYgCtns0QO4Qx6CVPc05Fex2gp7EV2f+qKx9j5pBr8BXjiHo/sIAAA=" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <comments>
+    <dataBaseObjectModelHasComments Id="14b877c2-1a29-48a3-b7fa-b2e600411b20">
+      <comment Id="077bda05-4335-41c2-b299-1f4955d37917" text="The 'PK__Balance__3214EC0755CE512C' index is ignored, because 'Id' is a key" name="BalanceComment">
+        <subjects>
+          <commentReferencesSubjects Id="21ab6f0e-ce75-4e48-bfe3-7e378d673025">
+            <xpObjectMoniker Id="7673fc80-cbc0-430e-9255-548414f68030" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+  </comments>
+  <classes>
+    <dataBaseObjectModelHasClasses Id="e6ad42da-ae96-4d19-ab7e-7f0bc51dbe3d">
+      <xpObject Id="7673fc80-cbc0-430e-9255-548414f68030" name="Balance" baseClass="XPLiteObject" userFileName="Balance" designerFileName="Balance.Designer" className="Balance" virtualBaseClass="XPLiteObject" persistent="Balance" virtualName="Balance">
+        <fields>
+          <generalXpObjectHasFields Id="f9214a2a-c80c-46db-91a9-a391dfcaf6f3">
+            <field Id="efd67353-4d8d-4cb8-bc7f-e35b2054b261" name="Id" columnType="Int64" key="true" persistent="Id" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="81de2f2a-63c6-4317-b0d4-dc39d1f328b0">
+            <field Id="01d21f88-0bf0-4e8e-a7fd-dd75a44bb155" name="Volume" columnType="Double" displayName="Объем" persistent="Volume" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="bd406a7a-0ecc-430c-b4c9-23d1a1d646ca">
+            <field Id="d1f5b1da-1288-4cbd-9af8-2817e8f15a7d" name="Date" columnType="DateTime" displayName="Время" persistent="Date" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

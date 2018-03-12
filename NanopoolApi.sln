@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanopoolApi", "NanopoolApi\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoMonitor", "NanoMonitor\NanoMonitor.csproj", "{72AFB050-E7BC-4A64-932F-B8E98BC14105}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoDataBase", "NanoDataBase\NanoDataBase.csproj", "{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

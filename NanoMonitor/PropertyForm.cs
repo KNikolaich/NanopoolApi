@@ -13,6 +13,7 @@ namespace NanoMonitor
 {
     public partial class PropertyForm : Form
     {
+        Nanopool nanopool = new Nanopool(Statics.PoolType.ETH);
         public PropertyForm()
         {
             InitializeComponent();
@@ -22,9 +23,18 @@ namespace NanoMonitor
         {
             using (StatusForm statusForm = new StatusForm())
             {
-            var balance = new Nanopool(Statics.PoolType.ETH).GetAccountBalance(_tbAddress.Text);
+                var balance = nanopool.GetAccountBalance(_tbAddress.Text);
                 statusForm.Value = balance;
-                statusForm.ShowDialog();
+                if (statusForm.ShowDialog() == DialogResult.OK)
+                {
+                    if (balance.Status)
+                    {
+                        NanoDataBase.Domain.Save(balance);
+                    }
+                    //var charts = nanopool.GetWorkersAverageHashrate(_tbAddress.Text);
+
+                }
+
             }
             
         }
