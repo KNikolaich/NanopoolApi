@@ -19,6 +19,11 @@ namespace NanoDataBase.Nanopool
             Volume = balanceRaw.Data;
             Date = DateTime.Now;
         }
+
+        public override string ToString()
+        {
+            return $"({Id}) {Volume.ToString("N12")} [{Date.ToString("f")}] ";
+        }
     }
 
 }

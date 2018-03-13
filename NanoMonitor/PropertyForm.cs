@@ -9,7 +9,11 @@ namespace NanoMonitor
     {
         Nanopool nanopool = new Nanopool(Statics.PoolType.ETH);
         private bool _bShow;
+#if DEBUG
+        private readonly TimeSpan DELAY = new TimeSpan(0, 0, 15); //задержка
+#else
         private readonly TimeSpan DELAY = new TimeSpan(1, 0, 0); //задержка
+#endif
 
         public PropertyForm()
         {
@@ -18,7 +22,9 @@ namespace NanoMonitor
 
         protected override void OnLoad(EventArgs e)
         {
+            _timerRefreshData.Interval = (int) DELAY.TotalMilliseconds;
             _timerRefreshData.Start();
+            
             base.OnLoad(e);
         }
 
@@ -40,7 +46,11 @@ namespace NanoMonitor
             
             if (balance.Status)
             {
-                NanoDataBase.Domain.Save(balance, DELAY);
+                string infoArray = NanoDataBase.Domain.Save(balance, DELAY);
+                if (!string.IsNullOrEmpty(infoArray))
+                {
+                    _tbBalance.Text = Environment.NewLine + infoArray;
+                }
             }
             return balance;
         }

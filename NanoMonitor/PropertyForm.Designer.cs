@@ -39,13 +39,18 @@
             this._settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._timerRefreshData = new System.Windows.Forms.Timer(this.components);
+            this._tbBalance = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.contextMenuStrip1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _tbAddress
             // 
+            this._tbAddress.BackColor = System.Drawing.Color.WhiteSmoke;
             this._tbAddress.Enabled = false;
-            this._tbAddress.Location = new System.Drawing.Point(106, 12);
+            this._tbAddress.Location = new System.Drawing.Point(100, 3);
             this._tbAddress.Name = "_tbAddress";
             this._tbAddress.ReadOnly = true;
             this._tbAddress.Size = new System.Drawing.Size(273, 20);
@@ -55,17 +60,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.Size = new System.Drawing.Size(91, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Адрес аккаунта:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // _bTest
             // 
-            this._bTest.Location = new System.Drawing.Point(13, 212);
+            this._bTest.Location = new System.Drawing.Point(3, 446);
             this._bTest.Name = "_bTest";
-            this._bTest.Size = new System.Drawing.Size(95, 23);
+            this._bTest.Size = new System.Drawing.Size(91, 21);
             this._bTest.TabIndex = 2;
             this._bTest.Text = "Тестировать";
             this._bTest.UseVisualStyleBackColor = true;
@@ -73,11 +80,12 @@
             // 
             // _bSave
             // 
-            this._bSave.Location = new System.Drawing.Point(284, 212);
+            this._bSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._bSave.Location = new System.Drawing.Point(348, 446);
             this._bSave.Name = "_bSave";
-            this._bSave.Size = new System.Drawing.Size(95, 23);
+            this._bSave.Size = new System.Drawing.Size(95, 21);
             this._bSave.TabIndex = 2;
-            this._bSave.Text = "Сохранить";
+            this._bSave.Text = "Скрыть";
             this._bSave.UseVisualStyleBackColor = true;
             this._bSave.Click += new System.EventHandler(this._bSave_Click);
             // 
@@ -117,21 +125,63 @@
             this._timerRefreshData.Interval = 600000;
             this._timerRefreshData.Tick += new System.EventHandler(this._timerRefreshData_Tick);
             // 
+            // _tbBalance
+            // 
+            this._tbBalance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this._tbBalance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._tbBalance.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._tbBalance.Location = new System.Drawing.Point(100, 30);
+            this._tbBalance.Multiline = true;
+            this._tbBalance.Name = "_tbBalance";
+            this._tbBalance.ReadOnly = true;
+            this._tbBalance.Size = new System.Drawing.Size(343, 373);
+            this._tbBalance.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 379);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Баланс и курсы:";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this._tbBalance, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this._tbAddress, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this._bTest, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this._bSave, 1, 3);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.650246F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.34975F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(446, 470);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
             // PropertyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 240);
-            this.Controls.Add(this._bSave);
-            this.Controls.Add(this._bTest);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this._tbAddress);
+            this.ClientSize = new System.Drawing.Size(446, 470);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PropertyForm";
             this.Text = "Свойства системы";
             this.contextMenuStrip1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -146,6 +196,9 @@
         private System.Windows.Forms.ToolStripMenuItem _settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Timer _timerRefreshData;
+        private System.Windows.Forms.TextBox _tbBalance;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

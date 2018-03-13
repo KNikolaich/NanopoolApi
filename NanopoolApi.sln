@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoMonitor", "NanoMonitor\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoDataBase", "NanoDataBase\NanoDataBase.csproj", "{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRates", "ExchangeRates\ExchangeRates.csproj", "{9384DAB2-7E07-4BDE-853A-B508463072B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesTests", "ExchangeRatesTests\ExchangeRatesTests.csproj", "{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9384DAB2-7E07-4BDE-853A-B508463072B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9384DAB2-7E07-4BDE-853A-B508463072B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9384DAB2-7E07-4BDE-853A-B508463072B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9384DAB2-7E07-4BDE-853A-B508463072B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

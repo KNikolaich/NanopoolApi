@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Xpo;
 using DevExpress.Xpo.DB;
+using ExchangeRates;
 using NanoDataBase.Nanopool;
 using NanoDataBase.ORMDataModelNanopoolCode;
 using NanopoolApi.Response;
@@ -13,8 +14,9 @@ namespace NanoDataBase
 {
     public class Domain
     {
-        public static void Save(FloatValue balanceRaw, TimeSpan tsDelta)
+        public static string Save(FloatValue balanceRaw, TimeSpan tsDelta)
         {
+            string result = "";
             Balance balance = new Balance(Session);
             var lastBalance = GetNewId<Balance>();
             balance.Map(balanceRaw);
@@ -23,15 +25,31 @@ namespace NanoDataBase
                 if (lastBalance.Date.Add(tsDelta) <= DateTime.Now)
                 {
                     balance.Id = lastBalance.Id + 1;
-                    balance.Save();
+                    result = SaveBalance(balance, result);
                 }
             }
             else
             {
                 balance.Id = 0;
                 balance.Save();
+                result = SaveBalance(balance, result);
             }
+            return result;
+        }
 
+        private static string SaveBalance(Balance balance, string result)
+        {
+            var cmc = new CoinMarketCap(Statics.CurrencyType.ethereum);
+            var tickets = cmc.GetAllTickets();
+            //balance.Currency = tickets.Where(tick => tick.id == Statics.CurrencyType.ethereum.ToString())
+            balance.Save();
+            result = balance.ToString();
+            foreach (var itemTicket in tickets.Select(t => Environment.NewLine + t.name + "\t" + t.price_usd))
+            {
+                result += itemTicket;
+            }
+            
+            return result;
         }
 
         private static TXpObj GetNewId<TXpObj>() where TXpObj : XPLiteObject, IPersistentBase
