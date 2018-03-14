@@ -37,6 +37,26 @@ namespace NanoDataBase.Nanopool
             get { return fDate; }
             set { SetPropertyValue<DateTime>("Date", ref fDate, value); }
         }
+        double? fVolumeUsd;
+        /// <summary>
+        /// Объем сохраняется для истории по курсу на момент сохранения записи
+        /// </summary>
+        [DevExpress.Xpo.DisplayName(@"Объем в USD")]
+        public double? VolumeUsd
+        {
+            get { return fVolumeUsd; }
+            set { SetPropertyValue<double?>("VolumeUsd", ref fVolumeUsd, value); }
+        }
+        int fCurrencyType;
+        /// <summary>
+        /// Валюта храниться в Enum, а тут только её числовое значение.
+        /// </summary>
+        [DevExpress.Xpo.DisplayName(@"Валюта")]
+        public int CurrencyType
+        {
+            get { return fCurrencyType; }
+            set { SetPropertyValue<int>("CurrencyType", ref fCurrencyType, value); }
+        }
     }
 
 }

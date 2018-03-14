@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ExchangeRates
@@ -11,33 +10,33 @@ namespace ExchangeRates
     public class CoinMarketCap
     {
 
-        public CoinMarketCap() : this(Statics.CurrencyType.undefine)
+        public CoinMarketCap() : this(CurrencyTypeEnum.undefine)
         {
         }
 
-        public CoinMarketCap(Statics.CurrencyType type)
+        public CoinMarketCap(CurrencyTypeEnum type)
         {
             CurrencyType = type;
         }
 
-        public Statics.CurrencyType CurrencyType { get; set; }
+        public CurrencyTypeEnum CurrencyType { get; set; }
 
         public List<CoinMarketTicket> GetAllTickets()
         {
             var error = string.Empty;
-            CurrencyType = Statics.CurrencyType.undefine;
+            CurrencyType = CurrencyTypeEnum.undefine;
             var result = LoadResponse<List<CoinMarketTicket>>(Statics.Tickers, ref error);
 
             if (!string.IsNullOrWhiteSpace(error) && result == null)
             {
                 result = CastToChild<List<CoinMarketTicket>>(GetErrorResponse(error));
             }
-            var valuesEnum = Enum.GetNames(typeof(Statics.CurrencyType)).ToList();
+            var valuesEnum = Enum.GetNames(typeof(CurrencyTypeEnum)).ToList();
 
             return result.Where(ticket => valuesEnum.Contains(ticket.id)).ToList();
         }
 
-        public CoinMarketTicket GetTicket(Statics.CurrencyType type)
+        public CoinMarketTicket GetTicket(CurrencyTypeEnum type)
         {
 
             var error = string.Empty;
@@ -61,7 +60,7 @@ namespace ExchangeRates
                 throw new ArgumentNullException(nameof(url));
             }
 
-            url = url.Replace(Statics.CurrencyTypeeHolder, CurrencyType != Statics.CurrencyType.undefine? CurrencyType + "/" : "");
+            url = url.Replace(Statics.CurrencyTypeeHolder, CurrencyType != CurrencyTypeEnum.undefine? CurrencyType + "/" : "");
 
             try
             {

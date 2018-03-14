@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+using ExchangeRates;
 using NanopoolApi;
 using NanopoolApi.Response;
+using Statics = NanopoolApi.Statics;
 
 namespace NanoMonitor
 {
@@ -46,7 +48,7 @@ namespace NanoMonitor
             
             if (balance.Status)
             {
-                string infoArray = NanoDataBase.Domain.Save(balance, DELAY);
+                string infoArray = NanoDataBase.Domain.SaveBalance(balance, DELAY, CurrencyTypeEnum.ethereum);
                 if (!string.IsNullOrEmpty(infoArray))
                 {
                     _tbBalance.Text = Environment.NewLine + infoArray;

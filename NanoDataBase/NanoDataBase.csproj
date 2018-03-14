@@ -57,6 +57,10 @@
     </Compile>
     <Compile Include="ORMDataModelNanopoolCode\ConnectionHelper.cs" />
     <Compile Include="ORMDataModelNanopoolCode\IPersistentBase.cs" />
+    <Compile Include="ORMDataModelNanopoolCode\LogHistory.cs" />
+    <Compile Include="ORMDataModelNanopoolCode\LogHistory.Designer.cs">
+      <DependentUpon>LogHistory.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExchangeRates\ExchangeRates.csproj">

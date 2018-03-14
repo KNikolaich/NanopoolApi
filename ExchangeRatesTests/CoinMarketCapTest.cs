@@ -1,5 +1,4 @@
-﻿using System;
-using ExchangeRates;
+﻿using ExchangeRates;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ExchangeRatesTests
@@ -11,8 +10,8 @@ namespace ExchangeRatesTests
         public void BitcoinType_OneTicket()
         {
             var cmc = new CoinMarketCap();
-            var ticket = cmc.GetTicket(Statics.CurrencyType.bitcoin);
-            Assert.AreEqual(ticket.id, Statics.CurrencyType.bitcoin.ToString());
+            var ticket = cmc.GetTicket(CurrencyTypeEnum.bitcoin);
+            Assert.AreEqual(ticket.id, CurrencyTypeEnum.bitcoin.ToString());
         }
 
 

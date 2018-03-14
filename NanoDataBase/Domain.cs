@@ -14,36 +14,59 @@ namespace NanoDataBase
 {
     public class Domain
     {
-        public static string Save(FloatValue balanceRaw, TimeSpan tsDelta)
+        /// <summary> Сохранить баланс </summary>
+        /// <param name="balanceRaw">сырье</param>
+        /// <param name="tsDelta">время перед следующим сохранением</param>
+        /// <param name="currency">валюта</param>
+        /// <returns></returns>
+        public static string SaveBalance(FloatValue balanceRaw, TimeSpan tsDelta, CurrencyTypeEnum currency)
         {
             string result = "";
             Balance balance = new Balance(Session);
             var lastBalance = GetNewId<Balance>();
-            balance.Map(balanceRaw);
+            balance.Map(balanceRaw, currency);
+
+            if (HasNeedingSave(tsDelta, lastBalance, balance))
+            {
+                result = AdditionInfoFromCoinMarketCap(balance, currency);
+
+                balance.Save();
+            }
+
+            return result;
+        }
+
+        /// <summary> Имеется необходимость сохранения </summary>
+        private static bool HasNeedingSave(TimeSpan tsDelta, Balance lastBalance, Balance balance)
+        {
+            bool needSave = false;
             if (lastBalance != null)
             {
                 if (lastBalance.Date.Add(tsDelta) <= DateTime.Now)
                 {
                     balance.Id = lastBalance.Id + 1;
-                    result = SaveBalance(balance, result);
+                    needSave = true;
                 }
             }
             else
             {
                 balance.Id = 0;
-                balance.Save();
-                result = SaveBalance(balance, result);
+                needSave = true;
             }
-            return result;
+            return needSave;
         }
 
-        private static string SaveBalance(Balance balance, string result)
+        private static string AdditionInfoFromCoinMarketCap(Balance balance, CurrencyTypeEnum currency)
         {
-            var cmc = new CoinMarketCap(Statics.CurrencyType.ethereum);
+            var cmc = new CoinMarketCap(currency);
             var tickets = cmc.GetAllTickets();
-            //balance.Currency = tickets.Where(tick => tick.id == Statics.CurrencyType.ethereum.ToString())
-            balance.Save();
-            result = balance.ToString();
+            var ticketCurr = tickets.FirstOrDefault(t => t.id == currency.ToString());
+            if (ticketCurr != null)
+            {
+                balance.VolumeUsd = ticketCurr.price_usd * balance.Volume;
+            }
+
+            var result = balance.ToString();
             foreach (var itemTicket in tickets.Select(t => Environment.NewLine + t.name + "\t" + t.price_usd))
             {
                 result += itemTicket;

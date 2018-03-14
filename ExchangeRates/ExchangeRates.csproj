@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CoinMarketCap.cs" />
     <Compile Include="CoinMarketTicket.cs" />
+    <Compile Include="CurrencyTypeEnum.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Statics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
