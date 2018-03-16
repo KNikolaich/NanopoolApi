@@ -13,6 +13,7 @@ namespace NanoDataBase.Nanopool
         public LogHistory(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
 
+        [NonPersistent]
         public MessageTypeEnum EnumMessageType
         {
             get { return (MessageTypeEnum) MessageType; }

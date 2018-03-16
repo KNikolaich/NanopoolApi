@@ -25,7 +25,7 @@ namespace ExchangeRates
         {
             var error = string.Empty;
             CurrencyType = CurrencyTypeEnum.undefine;
-            var result = LoadResponse<List<CoinMarketTicket>>(Statics.Tickers, ref error);
+            var result = LoadResponse<List<CoinMarketTicket>>(Statics.TickersFromCoinMarket, ref error);
 
             if (!string.IsNullOrWhiteSpace(error) && result == null)
             {
@@ -41,7 +41,7 @@ namespace ExchangeRates
 
             var error = string.Empty;
             CurrencyType = type;
-            var result = LoadResponse<List<CoinMarketTicket>>(Statics.Tickers, ref error);
+            var result = LoadResponse<List<CoinMarketTicket>>(Statics.TickersFromCoinMarket, ref error);
 
             if (!string.IsNullOrWhiteSpace(error) && result == null)
             {
