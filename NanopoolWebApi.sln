@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanopoolApi", "NanopoolApi\NanopoolApi.csproj", "{24B0896B-8233-4586-8F5E-56F2BC400EA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoMonitor", "NanoMonitor\NanoMonitor.csproj", "{72AFB050-E7BC-4A64-932F-B8E98BC14105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoDataBase", "NanoDataBase\NanoDataBase.csproj", "{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRates", "ExchangeRates\ExchangeRates.csproj", "{9384DAB2-7E07-4BDE-853A-B508463072B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesTests", "ExchangeRatesTests\ExchangeRatesTests.csproj", "{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nanopool.DXWebApp", "Nanopool.DXWebApp\Nanopool.DXWebApp.csproj", "{BA85BDB8-7E10-4D68-930B-8212ABCCE041}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24B0896B-8233-4586-8F5E-56F2BC400EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B0896B-8233-4586-8F5E-56F2BC400EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B0896B-8233-4586-8F5E-56F2BC400EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B0896B-8233-4586-8F5E-56F2BC400EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72AFB050-E7BC-4A64-932F-B8E98BC14105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9384DAB2-7E07-4BDE-853A-B508463072B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9384DAB2-7E07-4BDE-853A-B508463072B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9384DAB2-7E07-4BDE-853A-B508463072B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9384DAB2-7E07-4BDE-853A-B508463072B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24991E7E-84AA-4A97-928A-6463A53D8CA2}
+	EndGlobalSection
+EndGlobal

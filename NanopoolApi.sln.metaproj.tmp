@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions;ValidateProjects">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportBefore\*" Condition="'$(ImportByWildcardBeforeSolution)' != 'false' and exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportBefore')" />
+  <Import Project="C:\TeamCity\buildAgent\work\736369249c72a682\before.NanopoolApi.sln.targets" Condition="exists('C:\TeamCity\buildAgent\work\736369249c72a682\before.NanopoolApi.sln.targets')" />
+  <PropertyGroup Condition=" '$(Configuration)' == '' ">
+    <Configuration>Debug</Configuration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == '' ">
+    <Platform>Any CPU</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(AspNetConfiguration)' == '') ">
+    <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SolutionDir>C:\TeamCity\buildAgent\work\736369249c72a682\</SolutionDir>
+    <SolutionExt>.sln</SolutionExt>
+    <SolutionFileName>NanopoolApi.sln</SolutionFileName>
+    <SolutionName>NanopoolApi</SolutionName>
+    <SolutionPath>C:\TeamCity\buildAgent\work\736369249c72a682\NanopoolApi.sln</SolutionPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and ('$(MSBuildToolsVersion)' == '3.5' or '$(MSBuildToolsVersion)' == '3.0')">v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and !('$(MSBuildToolsVersion)' == '3.5' or '$(MSBuildToolsVersion)' == '3.0' or '$(MSBuildToolsVersion)' == '2.0')">v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{24B0896B-8233-4586-8F5E-56F2BC400EA2}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanopoolApi\NanopoolApi.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{72AFB050-E7BC-4A64-932F-B8E98BC14105}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanoMonitor\NanoMonitor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanoDataBase\NanoDataBase.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{9384DAB2-7E07-4BDE-853A-B508463072B1}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\ExchangeRates\ExchangeRates.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\ExchangeRatesTests\ExchangeRatesTests.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BA85BDB8-7E10-4D68-930B-8212ABCCE041}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\Nanopool.DXWebApp\Nanopool.DXWebApp.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+</SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <ItemGroup>
+    <SolutionConfiguration Include="Debug|Any CPU">
+      <Configuration>Debug</Configuration>
+      <Platform>Any CPU</Platform>
+      <Content>
+        <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{24B0896B-8233-4586-8F5E-56F2BC400EA2}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanopoolApi\NanopoolApi.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{72AFB050-E7BC-4A64-932F-B8E98BC14105}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanoMonitor\NanoMonitor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanoDataBase\NanoDataBase.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{9384DAB2-7E07-4BDE-853A-B508463072B1}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\ExchangeRates\ExchangeRates.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\ExchangeRatesTests\ExchangeRatesTests.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BA85BDB8-7E10-4D68-930B-8212ABCCE041}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\Nanopool.DXWebApp\Nanopool.DXWebApp.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+</SolutionConfiguration>
+      </Content>
+    </SolutionConfiguration>
+    <SolutionConfiguration Include="Release|Any CPU">
+      <Configuration>Release</Configuration>
+      <Platform>Any CPU</Platform>
+      <Content>
+        <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{24B0896B-8233-4586-8F5E-56F2BC400EA2}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanopoolApi\NanopoolApi.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{72AFB050-E7BC-4A64-932F-B8E98BC14105}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanoMonitor\NanoMonitor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanoDataBase\NanoDataBase.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{9384DAB2-7E07-4BDE-853A-B508463072B1}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\ExchangeRates\ExchangeRates.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\ExchangeRatesTests\ExchangeRatesTests.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BA85BDB8-7E10-4D68-930B-8212ABCCE041}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\Nanopool.DXWebApp\Nanopool.DXWebApp.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+</SolutionConfiguration>
+      </Content>
+    </SolutionConfiguration>
+  </ItemGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{24B0896B-8233-4586-8F5E-56F2BC400EA2}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanopoolApi\NanopoolApi.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{72AFB050-E7BC-4A64-932F-B8E98BC14105}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanoMonitor\NanoMonitor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\NanoDataBase\NanoDataBase.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{9384DAB2-7E07-4BDE-853A-B508463072B1}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\ExchangeRates\ExchangeRates.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\ExchangeRatesTests\ExchangeRatesTests.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BA85BDB8-7E10-4D68-930B-8212ABCCE041}" AbsolutePath="C:\TeamCity\buildAgent\work\736369249c72a682\Nanopool.DXWebApp\Nanopool.DXWebApp.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+</SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportAfter\*" Condition="'$(ImportByWildcardBeforeSolution)' != 'false' and exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportAfter')" />
+  <Import Project="C:\TeamCity\buildAgent\work\736369249c72a682\after.NanopoolApi.sln.targets" Condition="exists('C:\TeamCity\buildAgent\work\736369249c72a682\after.NanopoolApi.sln.targets')" />
+  <Target Name="Build" />
+  <Target Name="Rebuild" />
+  <Target Name="Clean" />
+  <Target Name="Publish" />
+</Project>

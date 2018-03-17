@@ -15,7 +15,7 @@ namespace NanoDataBase.Nanopool
 {
     public static class ConnectionHelper
     {
-        public const string ConnectionString = @"XpoProvider=MSSqlServer;data source=(localdb)\MSSQLLocalDB;integrated security=SSPI;initial catalog=Nanopool";
+        public const string ConnectionString = @"XpoProvider=MSSqlServer;data source=XPEH\SQLEXPRESS;integrated security=SSPI;initial catalog=Nanopool";
         public static void Connect(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption)
         {
             XpoDefault.DataLayer = XpoDefault.GetDataLayer(ConnectionString, autoCreateOption);
