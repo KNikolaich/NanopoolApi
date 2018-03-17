@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="Nanopool_DXWebApp.MvcApplication" Language="C#" %>

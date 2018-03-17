@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRates", "ExchangeRa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesTests", "ExchangeRatesTests\ExchangeRatesTests.csproj", "{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nanopool.DXWebApp", "Nanopool.DXWebApp\Nanopool.DXWebApp.csproj", "{BA85BDB8-7E10-4D68-930B-8212ABCCE041}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65046BC6-CEAF-4BA9-AEF1-2F6F1E8512DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

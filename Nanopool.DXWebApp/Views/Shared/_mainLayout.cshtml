@@ -1,0 +1,29 @@
+@{ Layout = "~/Views/Shared/_rootLayout.cshtml"; }
+
+    @Html.DevExpress().Panel(settings => {
+        settings.Name = "LeftPane";
+        settings.FixedPosition = PanelFixedPosition.WindowLeft;
+        settings.Collapsible = true;
+        settings.SettingsAdaptivity.CollapseAtWindowInnerWidth = 1023;
+        settings.ControlStyle.CssClass = "leftPane";
+        settings.Styles.Panel.CssClass = "panel";
+        settings.SetContent(() => {
+            Html.RenderPartial("ContentLeftPartialView");
+        });
+    }).GetHtml()
+
+    <div class="contentPane">
+        @RenderBody()
+    </div>
+
+    @Html.DevExpress().Panel(settings => {
+        settings.Name = "RightPane";
+        settings.FixedPosition = PanelFixedPosition.WindowRight;
+        settings.Collapsible = true;
+        settings.SettingsAdaptivity.CollapseAtWindowInnerWidth = 1023;
+        settings.ControlStyle.CssClass = "rightPane";
+        settings.Styles.Panel.CssClass = "panel";
+        settings.SetContent(() => {
+            Html.RenderPartial("ContentRightPartialView");
+        });
+    }).GetHtml()

@@ -14,6 +14,23 @@ namespace NanoDataBase
 {
     public class Domain
     {
+
+        public static ICollection<TXpObj> GetCollectionXpObj<TXpObj>() where TXpObj : XPLiteObject, IPersistentBase
+        {
+            List<TXpObj> objects;
+            try
+            {
+                var classInfoTxpObj = Session.GetClassInfo(typeof(TXpObj));
+                objects = Session.GetObjects(classInfoTxpObj, null, new SortingCollection(new SortProperty("Id", SortingDirection.Descending)), 100, false, false).Cast<TXpObj>().ToList();
+            }
+            catch (Exception e)
+            {
+                // LogHolder.LogError(e);
+                throw;
+            }
+            return objects;
+        }
+
         /// <summary> Сохранить баланс </summary>
         /// <param name="balanceRaw">сырье</param>
         /// <param name="tsDelta">время перед следующим сохранением</param>

@@ -1,0 +1,9 @@
+@Html.DevExpress().Chart(settings => {
+    settings.Name = "ChartBalances";
+    settings.Height = Unit.Pixel(390);
+    settings.Width = Unit.Pixel(690);
+    //settings.Legend.Title = "Eth";
+    settings.Series.Add(s => {
+        s.SetDataMembers("Date", "Volume");
+    });
+}).Bind(Model).GetHtml()
