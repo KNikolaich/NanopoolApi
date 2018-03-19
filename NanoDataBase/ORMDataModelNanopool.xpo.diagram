@@ -13,7 +13,7 @@
     <commentShape Id="a28c1caf-9930-467a-8587-9761bfc344c8" absoluteBounds="1.875, 0.5, 4.375, 0.375">
       <commentMoniker Id="077bda05-4335-41c2-b299-1f4955d37917" />
     </commentShape>
-    <commentConnector Id="3f12da9a-1a82-411f-bf1b-bd5f44f34bcc" edgePoints="[(2.75 : 0.875); (2.75 : 1.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <commentConnector Id="3f12da9a-1a82-411f-bf1b-bd5f44f34bcc" edgePoints="[(2.75 : 0.875); (2.75 : 1.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <commentReferencesSubjectsMoniker Id="21ab6f0e-ce75-4e48-bfe3-7e378d673025" />
       <nodes>
         <commentShapeMoniker Id="a28c1caf-9930-467a-8587-9761bfc344c8" />
