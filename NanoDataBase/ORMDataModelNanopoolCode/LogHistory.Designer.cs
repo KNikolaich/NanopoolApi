@@ -47,6 +47,9 @@ namespace NanoDataBase.Nanopool
             set { SetPropertyValue<DateTime>("DateLog", ref fDateLog, value); }
         }
         int fMessageType;
+        /// <summary>
+        /// Транслируется с Enum
+        /// </summary>
         [DevExpress.Xpo.DisplayName(@"Тип сообщения")]
         public int MessageType
         {
