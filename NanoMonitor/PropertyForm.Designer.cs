@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this._bTest = new System.Windows.Forms.Button();
             this._bSave = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this._notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,13 +93,13 @@
             this._bSave.UseVisualStyleBackColor = true;
             this._bSave.Click += new System.EventHandler(this._bSave_Click);
             // 
-            // notifyIcon1
+            // _notifyIcon1
             // 
-            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
+            this._notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this._notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("_notifyIcon1.Icon")));
+            this._notifyIcon1.Text = "_notifyIcon1";
+            this._notifyIcon1.Visible = true;
+            this._notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
             // 
             // contextMenuStrip1
             // 
@@ -220,7 +220,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button _bTest;
         private System.Windows.Forms.Button _bSave;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.NotifyIcon _notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem _settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;

@@ -44,16 +44,22 @@
     <None Include="ORMDataModelNanopool.xpo.diagram">
       <DependentUpon>ORMDataModelNanopool.xpo</DependentUpon>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.13\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain.cs" />
+    <Compile Include="Logging\LogHolder.cs" />
     <Compile Include="ORMDataModelNanopoolCode\Balance.cs" />
     <Compile Include="ORMDataModelNanopoolCode\Balance.Designer.cs">
       <DependentUpon>Balance.cs</DependentUpon>

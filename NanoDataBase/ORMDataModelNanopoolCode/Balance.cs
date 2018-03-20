@@ -34,6 +34,9 @@ namespace NanoDataBase.Nanopool
             get { return (CurrencyTypeEnum)CurrencyType; }
             set { CurrencyType = (int)value; }
         }
+
+        [NonPersistent]
+        public bool Status { get; set; }
     }
 
 }

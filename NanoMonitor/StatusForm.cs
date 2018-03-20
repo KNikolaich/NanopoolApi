@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NanoDataBase.Nanopool;
 using NanopoolApi.Response;
 
 namespace NanoMonitor
@@ -19,11 +20,11 @@ namespace NanoMonitor
             InitializeComponent();
         }
 
-        public FloatValue Value
+        public Balance Value
         {
             set
             {
-                _lBalabce.Text = value.Data.ToString("R");
+                _lBalabce.Text = value.Volume.ToString("n5");
                 _bPicture.ImageIndex = GetIndex(value.Status);
             }
         }

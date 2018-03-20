@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DevExpress.Xpo;
 using DevExpress.Xpo.DB;
 using ExchangeRates;
+using NanoDataBase.Logging;
 using NanoDataBase.Nanopool;
 using NanoDataBase.ORMDataModelNanopoolCode;
 using NanopoolApi.Response;
@@ -25,7 +26,7 @@ namespace NanoDataBase
             }
             catch (Exception e)
             {
-                // LogHolder.LogError(e);
+                LogHolder.LogError(e);
                 throw;
             }
             return objects;
@@ -36,21 +37,25 @@ namespace NanoDataBase
         /// <param name="tsDelta">время перед следующим сохранением</param>
         /// <param name="currency">валюта</param>
         /// <returns></returns>
-        public static string SaveBalance(FloatValue balanceRaw, TimeSpan tsDelta, CurrencyTypeEnum currency)
+        public static Balance SaveBalance(FloatValue balanceRaw, TimeSpan tsDelta, CurrencyTypeEnum currency, out String result)
         {
-            string result = "";
+
+            result = "";
             Balance balance = new Balance(Session);
             var lastBalance = GetNewId<Balance>();
             balance.Map(balanceRaw, currency);
 
-            if (HasNeedingSave(tsDelta, lastBalance, balance))
+            if (balanceRaw.Status)
             {
-                result = AdditionInfoFromCoinMarketCap(balance, currency);
+                if (HasNeedingSave(tsDelta, lastBalance, balance))
+                {
+                    result = AdditionInfoFromCoinMarketCap(balance, currency);
 
-                balance.Save();
+                    balance.Save();
+                }
             }
-
-            return result;
+            lastBalance.Status = balanceRaw.Status;
+            return lastBalance;
         }
 
         /// <summary> Имеется необходимость сохранения </summary>
@@ -86,7 +91,7 @@ namespace NanoDataBase
             result += Environment.NewLine + balance;
             if (balance.VolumeUsd != null)
                 result += $" ({balance.VolumeUsd.Value.ToString("N4")}$)"+ Environment.NewLine;
-            foreach (var itemTicket in tickets.Select(t => Environment.NewLine + t.name + "\t" + t.price_usd))
+            foreach (var itemTicket in tickets.Select(t => Environment.NewLine + t.name + "\t\t" + t.price_usd))
             {
                 result += itemTicket;
             }
@@ -104,7 +109,7 @@ namespace NanoDataBase
             }
             catch (Exception e)
             {
-                // LogHolder.LogError(e);
+                LogHolder.LogError(e);
                 throw;
             }
             return objects.FirstOrDefault();
