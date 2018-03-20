@@ -42,6 +42,8 @@
             this._tbBalance = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this._lAddressDb = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,11 +51,12 @@
             // _tbAddress
             // 
             this._tbAddress.BackColor = System.Drawing.Color.WhiteSmoke;
+            this._tbAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tbAddress.Enabled = false;
-            this._tbAddress.Location = new System.Drawing.Point(100, 3);
+            this._tbAddress.Location = new System.Drawing.Point(101, 3);
             this._tbAddress.Name = "_tbAddress";
             this._tbAddress.ReadOnly = true;
-            this._tbAddress.Size = new System.Drawing.Size(273, 20);
+            this._tbAddress.Size = new System.Drawing.Size(342, 20);
             this._tbAddress.TabIndex = 0;
             this._tbAddress.Text = "0x13c90C011E0524793561dE63F2809Eb6723eb195";
             // 
@@ -63,13 +66,14 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 27);
+            this.label1.Size = new System.Drawing.Size(92, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Адрес аккаунта:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // _bTest
             // 
+            this._bTest.Dock = System.Windows.Forms.DockStyle.Left;
             this._bTest.Location = new System.Drawing.Point(3, 446);
             this._bTest.Name = "_bTest";
             this._bTest.Size = new System.Drawing.Size(91, 21);
@@ -80,7 +84,7 @@
             // 
             // _bSave
             // 
-            this._bSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._bSave.Dock = System.Windows.Forms.DockStyle.Right;
             this._bSave.Location = new System.Drawing.Point(348, 446);
             this._bSave.Name = "_bSave";
             this._bSave.Size = new System.Drawing.Size(95, 21);
@@ -130,27 +134,28 @@
             this._tbBalance.BackColor = System.Drawing.Color.WhiteSmoke;
             this._tbBalance.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tbBalance.Font = new System.Drawing.Font("Sylfaen", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._tbBalance.Location = new System.Drawing.Point(100, 30);
+            this._tbBalance.Location = new System.Drawing.Point(101, 31);
             this._tbBalance.Multiline = true;
             this._tbBalance.Name = "_tbBalance";
             this._tbBalance.ReadOnly = true;
-            this._tbBalance.Size = new System.Drawing.Size(343, 373);
+            this._tbBalance.Size = new System.Drawing.Size(342, 390);
             this._tbBalance.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 27);
+            this.label2.Location = new System.Drawing.Point(3, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 379);
+            this.label2.Size = new System.Drawing.Size(92, 396);
             this.label2.TabIndex = 1;
             this.label2.Text = "Баланс и курсы:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this._tbBalance, 1, 1);
@@ -158,16 +163,40 @@
             this.tableLayoutPanel1.Controls.Add(this._bTest, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this._bSave, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this._lAddressDb, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.650246F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.650247F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.34975F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(446, 470);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(3, 424);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 19);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Адрес БД:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // _lAddressDb
+            // 
+            this._lAddressDb.AutoSize = true;
+            this._lAddressDb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._lAddressDb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._lAddressDb.Location = new System.Drawing.Point(101, 424);
+            this._lAddressDb.Name = "_lAddressDb";
+            this._lAddressDb.Size = new System.Drawing.Size(342, 19);
+            this._lAddressDb.TabIndex = 7;
+            this._lAddressDb.Text = "_lAddressDb";
             // 
             // PropertyForm
             // 
@@ -199,6 +228,8 @@
         private System.Windows.Forms.TextBox _tbBalance;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label _lAddressDb;
     }
 }
 

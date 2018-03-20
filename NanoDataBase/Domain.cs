@@ -82,8 +82,10 @@ namespace NanoDataBase
             {
                 balance.VolumeUsd = ticketCurr.price_usd * balance.Volume;
             }
-
-            var result = balance.ToString();
+            var result = balance.Date.ToString("f");
+            result += Environment.NewLine + balance;
+            if (balance.VolumeUsd != null)
+                result += $" ({balance.VolumeUsd.Value.ToString("N4")}$)"+ Environment.NewLine;
             foreach (var itemTicket in tickets.Select(t => Environment.NewLine + t.name + "\t" + t.price_usd))
             {
                 result += itemTicket;
@@ -146,5 +148,10 @@ namespace NanoDataBase
             }
         }
 
+        public static string GetAddressDb()
+        {
+            //"data source ="
+            return $"{Session.Connection.Database} на сервере {((System.Data.SqlClient.SqlConnection)Session.Connection).DataSource}";
+        }
     }
 }

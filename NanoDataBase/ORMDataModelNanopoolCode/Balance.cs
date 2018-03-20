@@ -24,7 +24,7 @@ namespace NanoDataBase.Nanopool
 
         public override string ToString()
         {
-            return $"({Id}) {Volume.ToString("N12")} [{Date.ToString("f")}] ";
+            return $"({Id}) {Volume.ToString("N8")} {EnumCurrencyType.ToString()}";
         }
 
         

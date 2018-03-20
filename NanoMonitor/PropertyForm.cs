@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using ExchangeRates;
+using NanoDataBase;
 using NanopoolApi;
 using NanopoolApi.Response;
 using Statics = NanopoolApi.Statics;
@@ -24,9 +25,11 @@ namespace NanoMonitor
 
         protected override void OnLoad(EventArgs e)
         {
+            SaveBalance();
+
+            _lAddressDb.Text = Domain.GetAddressDb();
             _timerRefreshData.Interval = (int) DELAY.TotalMilliseconds;
             _timerRefreshData.Start();
-            
             base.OnLoad(e);
         }
 
@@ -48,10 +51,10 @@ namespace NanoMonitor
             
             if (balance.Status)
             {
-                string infoArray = NanoDataBase.Domain.SaveBalance(balance, DELAY, CurrencyTypeEnum.ethereum);
+                string infoArray = Domain.SaveBalance(balance, DELAY, CurrencyTypeEnum.ethereum);
                 if (!string.IsNullOrEmpty(infoArray))
                 {
-                    _tbBalance.Text = Environment.NewLine + infoArray;
+                    _tbBalance.Text = infoArray;
                 }
             }
             return balance;
