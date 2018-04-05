@@ -44,6 +44,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this._lAddressDb = new System.Windows.Forms.Label();
+            this.testForm1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testForm2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -105,21 +108,23 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._settingToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.testForm1ToolStripMenuItem,
+            this.testForm2ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(141, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 114);
             // 
             // _settingToolStripMenuItem
             // 
             this._settingToolStripMenuItem.Name = "_settingToolStripMenuItem";
-            this._settingToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this._settingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this._settingToolStripMenuItem.Text = "Настройки...";
             this._settingToolStripMenuItem.Click += new System.EventHandler(this._settingToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Выход.";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -198,6 +203,33 @@
             this._lAddressDb.TabIndex = 7;
             this._lAddressDb.Text = "_lAddressDb";
             // 
+            // testForm1ToolStripMenuItem
+            // 
+            this.testForm1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripComboBox1});
+            this.testForm1ToolStripMenuItem.Name = "testForm1ToolStripMenuItem";
+            this.testForm1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testForm1ToolStripMenuItem.Text = "TestForm1";
+            this.testForm1ToolStripMenuItem.Click += new System.EventHandler(this.testForm1ToolStripMenuItem_Click);
+            // 
+            // testForm2ToolStripMenuItem
+            // 
+            this.testForm2ToolStripMenuItem.Name = "testForm2ToolStripMenuItem";
+            this.testForm2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testForm2ToolStripMenuItem.Text = "TestForm2";
+            this.testForm2ToolStripMenuItem.Click += new System.EventHandler(this.testForm2ToolStripMenuItem_Click);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "DumpWebPage Без asygn ",
+            "DumpWebPage C asygn ",
+            "AddAFavIcon Without asygn",
+            "AddAFavIcon With asygn"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 21);
+            this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click);
+            // 
             // PropertyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +262,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label _lAddressDb;
+        private System.Windows.Forms.ToolStripMenuItem testForm1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testForm2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
     }
 }
 

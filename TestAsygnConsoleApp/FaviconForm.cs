@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NanoMonitor
+namespace TestAsygnConsoleApp
 {
-    public partial class EmptyForm : Form
+    public partial class FaviconForm : Form
     {
-        public EmptyForm()
+        public FaviconForm()
         {
             InitializeComponent();
-        }
-
-        public void SetListBoxText(string strForListBox)
-        {
-            _tbLogs.Text = strForListBox;
         }
     }
 }

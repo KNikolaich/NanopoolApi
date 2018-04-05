@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesTests", "Excha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nanopool.DXWebApp", "Nanopool.DXWebApp\Nanopool.DXWebApp.csproj", "{BA85BDB8-7E10-4D68-930B-8212ABCCE041}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAsygnConsoleApp", "TestAsygnConsoleApp\TestAsygnConsoleApp.csproj", "{DE73D58E-D6A0-4486-A446-6FF8D4810F58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaviconBrowser", "..\..\!TestBranches\FaviconBrowser\FaviconBrowser\FaviconBrowser.csproj", "{FF26F65E-0DF6-4DC9-B37A-7CB5387244ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA85BDB8-7E10-4D68-930B-8212ABCCE041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE73D58E-D6A0-4486-A446-6FF8D4810F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE73D58E-D6A0-4486-A446-6FF8D4810F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE73D58E-D6A0-4486-A446-6FF8D4810F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE73D58E-D6A0-4486-A446-6FF8D4810F58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF26F65E-0DF6-4DC9-B37A-7CB5387244ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF26F65E-0DF6-4DC9-B37A-7CB5387244ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF26F65E-0DF6-4DC9-B37A-7CB5387244ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF26F65E-0DF6-4DC9-B37A-7CB5387244ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

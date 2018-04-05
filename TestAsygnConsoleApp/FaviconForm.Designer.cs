@@ -1,6 +1,6 @@
-﻿namespace NanoMonitor
+﻿namespace TestAsygnConsoleApp
 {
-    partial class EmptyForm
+    partial class FaviconForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this._tbLogs = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // _tbLogs
-            // 
-            this._tbLogs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._tbLogs.Location = new System.Drawing.Point(0, 0);
-            this._tbLogs.Multiline = true;
-            this._tbLogs.Name = "_tbLogs";
-            this._tbLogs.Size = new System.Drawing.Size(292, 273);
-            this._tbLogs.TabIndex = 1;
-            // 
-            // EmptyForm
+            // FaviconForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 273);
-            this.Controls.Add(this._tbLogs);
-            this.Name = "EmptyForm";
-            this.Text = "EmptyForm";
+            this.ClientSize = new System.Drawing.Size(754, 544);
+            this.Name = "FaviconForm";
+            this.Text = "FaviconForm";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox _tbLogs;
     }
 }

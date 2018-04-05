@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics.Eventing.Reader;
+using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ExchangeRates;
 using NanoDataBase;
@@ -17,7 +19,7 @@ namespace NanoMonitor
         Nanopool nanopool = new Nanopool(Statics.PoolType.ETH);
         private bool _bShow;
 #if DEBUG
-        private readonly TimeSpan DELAY = new TimeSpan(0, 0, 15); //задержка
+        private readonly TimeSpan DELAY = new TimeSpan(0, 15, 15); //задержка
 #else
         private readonly TimeSpan DELAY = new TimeSpan(1, 0, 0); //задержка
 #endif
@@ -159,6 +161,47 @@ namespace NanoMonitor
         private void notifyIcon1_DoubleClick(object sender, EventArgs e)
         {
             ShowOrHide();
+        }
+
+        private void testForm1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (EmptyForm emptyForm = new EmptyForm())
+            {
+                var page = DumpWebPage("https://minergate.com/");
+                emptyForm.SetListBoxText(page);
+                emptyForm.ShowDialog(this);
+            }
+        }
+
+        private string DumpWebPage(string uri)
+        {
+            WebClient webclient = new WebClient();
+            string page = webclient.DownloadString(uri);
+            return page;
+        }
+
+        private void testForm2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (EmptyForm emptyForm = new EmptyForm())
+            {
+                WebClient webclient = new WebClient();
+                Task<string> page = webclient.DownloadStringTaskAsync("https://yandex.ru/");
+                
+                emptyForm.SetListBoxText(page.Result);
+                emptyForm.ShowDialog(this);
+            }
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+            switch (toolStripComboBox1.SelectedIndex)
+            {
+                case 0: break;
+                case 1: break;
+                case 2: break;
+                case 3: break;
+            }
+            
         }
     }
 }
