@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Xpo;
@@ -16,13 +17,22 @@ namespace NanoDataBase
     public class Domain
     {
 
-        public static ICollection<TXpObj> GetCollectionXpObj<TXpObj>() where TXpObj : XPLiteObject, IPersistentBase
+        public static ICollection<TXpObj> GetCollectionXpObj<TXpObj>(int top = 100) where TXpObj : XPLiteObject, IPersistentBase
         {
             List<TXpObj> objects;
             try
             {
                 var classInfoTxpObj = Session.GetClassInfo(typeof(TXpObj));
-                objects = Session.GetObjects(classInfoTxpObj, null, new SortingCollection(new SortProperty("Id", SortingDirection.Descending)), 100, false, false).Cast<TXpObj>().ToList();
+                objects = Session.GetObjects(classInfoTxpObj, null, new SortingCollection(new SortProperty("Id", SortingDirection.Descending)), top, false, false).Cast<TXpObj>().ToList();
+                if (!objects.Any())
+                {
+                    var method = typeof(TXpObj).GetMethod("InitializeNewDb");
+                    object[] param = new object[] { Session };
+                    if (method != null)
+                    {
+                        method.Invoke(null, param);
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -35,12 +45,15 @@ namespace NanoDataBase
         /// <summary> Сохранить баланс </summary>
         /// <param name="balanceRaw">сырье</param>
         /// <param name="tsDelta">время перед следующим сохранением</param>
-        /// <param name="currency">валюта</param>
+        /// <param name="currencyEnum">валюта</param>
         /// <returns></returns>
-        public static Balance SaveBalance(FloatValue balanceRaw, TimeSpan tsDelta, CurrencyTypeEnum currency, out String result)
+        public static Balance SaveBalance(FloatValue balanceRaw, TimeSpan tsDelta, CurrencyTypeEnum currencyEnum, out String result)
         {
 
             result = "";
+
+            Currency currency = GetCurrensyByEnum(currencyEnum);
+
             Balance balance = new Balance(Session);
             var lastBalance = GetNewId<Balance>();
             balance.Map(balanceRaw, currency);
@@ -49,7 +62,7 @@ namespace NanoDataBase
             {
                 if (HasNeedingSave(tsDelta, lastBalance, balance))
                 {
-                    result = AdditionInfoFromCoinMarketCap(balance, currency);
+                    result = AdditionInfoFromCriptonator(currency);
 
                     balance.Save();
                 }
@@ -58,13 +71,55 @@ namespace NanoDataBase
             return lastBalance;
         }
 
+        private static string AdditionInfoFromCriptonator(Currency currency)
+        {
+            StringBuilder errors = new StringBuilder();
+            var collection = GetCollectionXpObj<RelationCurrency>();
+            RelationCurrency pairCurr = null;
+            do
+            {
+                pairCurr = collection.FirstOrDefault(pair => Equals(pair.First, currency));
+                if (pairCurr != null)
+                {
+                    string error = "";
+                    var tickerContayner = new ExchangeRates.Croptonator.CryptonatorApi().TickerContayner($"{pairCurr.First.Name}-{pairCurr.Second.Name}", ref error);
+                    if (string.IsNullOrEmpty(error))
+                    {
+                        errors.AppendLine(error);
+                    }
+                    var ticker = tickerContayner?.ticker;
+                    
+                    if (ticker != null)
+                    {
+                        var exRate = new ExchangeRate(Session)
+                        {
+                            CurrencyPair = pairCurr,
+                            Date = DateTime.Now,
+                            Rate = ticker.price
+                        };
+                        exRate.Save();
+                    }
+                    currency = pairCurr.Second;
+                }
+
+            } while (pairCurr != null);
+
+            return errors.ToString();
+        }
+
+        private static Currency GetCurrensyByEnum(CurrencyTypeEnum currencyEnum)
+        {
+            var listCurr = GetCollectionXpObj<Currency>();
+            return listCurr.FirstOrDefault(curr => curr.Name.ToLower() == currencyEnum.ToString());
+        }
+
         /// <summary> Имеется необходимость сохранения </summary>
         private static bool HasNeedingSave(TimeSpan tsDelta, Balance lastBalance, Balance balance)
         {
             bool needSave = false;
             if (lastBalance != null)
             {
-                if (lastBalance.Date.Add(tsDelta) <= DateTime.Now)
+                if (lastBalance.Date.Add(tsDelta) <= DateTime.Now.AddHours(-1))
                 {
                     balance.Id = lastBalance.Id + 1;
                     needSave = true;

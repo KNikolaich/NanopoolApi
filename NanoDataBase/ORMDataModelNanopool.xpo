@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="fae3224b-0706-456d-bd58-c4dda95422a6" dbName="Nanopool" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9Ik1TU3FsU2VydmVyIj4NCiAgPHBhcmFtZXRlcj4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0ic2VydmVyIiB2YWx1ZT0iKGxvY2FsZGIpXE1TU1FMTG9jYWxEQiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0iZGF0YWJhc2UiIHZhbHVlPSJOYW5vcG9vbCIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0idXNlSW50ZWdyYXRlZFNlY3VyaXR5IiB2YWx1ZT0iVHJ1ZSIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0idXNlcmlkIiB2YWx1ZT0iIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJwYXNzd29yZCIgdmFsdWU9IiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0icmVhZCBvbmx5IiB2YWx1ZT0iMSIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0iZ2VuZXJhdGVDb25uZWN0aW9uSGVscGVyIiB2YWx1ZT0idHJ1ZSIgLz4NCiAgPC9wYXJhbWV0ZXI+DQo8L0RldkV4cHJlc3NYcG9HZW5lcmF0b3JTZXR0aW5ncz4=" namespace="NanoDataBase.Nanopool" connectionString="XpoProvider=MSSqlServer;data source=(localdb)\MSSQLLocalDB;integrated security=SSPI;initial catalog=Nanopool" dataBaseShemaInfo="H4sIAAAAAAAEANVY227bOBB9L9B/EPwcWqRESlQhu9g4addouwiapNi3gJehI6wteXXJ5e93ZCuOFTttdpsm2KdkDmfEOTPDGdLp+5vF3LuCssqKfDRgQzp4P377Jj1UFZzWRalmMM1d4aFWXr27qbLR4LKul+98//r6engdDoty5geUMv/PL59PzSUsFMnyqla5gcHGyv7YaoC7el56pvQcqnbLlXyHbAF3kPeHWsBocKjmq702q7h+UmYLVd5+gltvWp3n2d8NKtZl09NCvUkxbxZ51QMRruoyy2fjqU397t+elb9rlvr3W27D+zZIjw7XsLf+c3a7RO+meR3xQcdpagfoOH6r89rzn/CFo6LBqNx94lu78lRLVcNZttjYtnLfci/naW7hBnbIreDuSyefLi66BF1chAHjxxMaCzE5FiyYDL6bnEfT88ME7Xe3RTvnesR2WaQfihKyWY7xr7aikPqrsruXj/OV3Lqe+p2wWTzKqhY4X1oM5tipeYVKfXCj+7HJ7NSO4ygOnZGUGG0o4SEFkgRCEMElZ9xFkoY09TvljXHHtHdAHoVxoU3MenEVvy2xp/Y9cv+W4DZJcBZpipBwKy3hRkuiTewIhEIHVHAdRGyH5FZG/wvP9Vl4ea6U2YA5KQnVDhMKEoiKnSXWxkJxrjUT4rm5tmf35Zla5oRmVhEWIF3MqiWJcpIEksUgHRMqtr8mq+fVKxRxEoANg0CTKEwCwrnTJBEQkdBGUoWOOa3Mc9OdNGUJubltW/YrJFgarUIeEN12JJ4YTjSEnDBhGYdEA9b1kxnvQ7vu+pTB33Iffy5mv2cVXlBuO8sV+st6M49kQCEB4kJr8Chjg1ZMYyQ0o0EguUTpf9+bsQUnQoqARHGSEK4gJokBShIXGpokUgbx7gD6ybL+AlWFd8xXqOhQW6u1xkEUxXiGE0cSKhSRwohYOBfxPdP2Z5szVKbMljVetV+esIowuzoU2KVC7NGYXpJE2K0T7kTilFTWPvvkbacRntSXJ2toTEFTZGdw6vJA4Hl1RhDjeBSKWAqbPPtA6kr5dRq0jCW3TmH9ttcMLi0n2JMsMSHWNwSUMxY8a4Pu5HuVtH0ugj0pC7MCu6tz+m39tsTivzq+WZYYpCGWhRpesXjIDrxuedRKw3hID7xJM6+bEkY5NHWp5gfeCT5sMoPX8bPiL8hHWkrLYsFtTCnwRKX+3Rar/SZzVVVQtQn42myim/5m0TVw2c3mSt9Cp43rQV9hUVzBQ8U1+lB3gk/k8XluLlU+A6ymlbwOzT4f8FVaLKGss1f27RE30o+QQ4nlNSkWC8jrqqvRHbinjB0NX0pQfsiwFB5Y9Nfevkn9Bz8qjP8B0tIrpH0QAAA=" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
-  <comments>
-    <dataBaseObjectModelHasComments Id="14b877c2-1a29-48a3-b7fa-b2e600411b20">
-      <comment Id="077bda05-4335-41c2-b299-1f4955d37917" text="The 'PK__Balance__3214EC0755CE512C' index is ignored, because 'Id' is a key" name="BalanceComment">
-        <subjects>
-          <commentReferencesSubjects Id="21ab6f0e-ce75-4e48-bfe3-7e378d673025">
-            <xpObjectMoniker Id="7673fc80-cbc0-430e-9255-548414f68030" />
-          </commentReferencesSubjects>
-        </subjects>
-      </comment>
-    </dataBaseObjectModelHasComments>
-  </comments>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="fae3224b-0706-456d-bd58-c4dda95422a6" dbName="Nanopool" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9Ik1TU3FsU2VydmVyIj4NCiAgPHBhcmFtZXRlcj4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0ic2VydmVyIiB2YWx1ZT0iKGxvY2FsZGIpXE1TU1FMTG9jYWxEQiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0iZGF0YWJhc2UiIHZhbHVlPSJOYW5vcG9vbCIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0idXNlSW50ZWdyYXRlZFNlY3VyaXR5IiB2YWx1ZT0iVHJ1ZSIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0idXNlcmlkIiB2YWx1ZT0iIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJwYXNzd29yZCIgdmFsdWU9IiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0icmVhZCBvbmx5IiB2YWx1ZT0iMSIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0iZ2VuZXJhdGVDb25uZWN0aW9uSGVscGVyIiB2YWx1ZT0idHJ1ZSIgLz4NCiAgPC9wYXJhbWV0ZXI+DQo8L0RldkV4cHJlc3NYcG9HZW5lcmF0b3JTZXR0aW5ncz4=" namespace="NanoDataBase.Nanopool" connectionString="XpoProvider=MSSqlServer;data source=(localdb)\MSSQLLocalDB;integrated security=SSPI;initial catalog=Nanopool" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
   <classes>
     <dataBaseObjectModelHasClasses Id="e6ad42da-ae96-4d19-ab7e-7f0bc51dbe3d">
       <xpObject Id="7673fc80-cbc0-430e-9255-548414f68030" name="Balance" baseClass="XPLiteObject" userFileName="Balance" designerFileName="Balance.Designer" className="Balance" virtualBaseClass="XPLiteObject" persistent="Balance" virtualName="Balance">
@@ -28,7 +17,7 @@
             <field Id="92ed322b-6392-44fb-95e6-3d68a3f1fbac" name="VolumeUsd" columnType="Double" displayName="Объем в USD" virtualColumnType="Double" delayedUpdateModifiedOnly="false" isNullable="true" xMLDocComments="Объем сохраняется для истории по курсу на момент сохранения записи" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="43a8be9a-505a-466b-8520-19107229f738">
-            <field Id="d8cba342-b255-49c4-be34-15d14e9be7fd" name="CurrencyType" columnType="Int32" displayName="Валюта" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" xMLDocComments="Валюта храниться в Enum, а тут только её числовое значение." />
+            <field Id="d8cba342-b255-49c4-be34-15d14e9be7fd" name="Currency" columnType="Int32" displayName="Валюта" virtualColumnType="Currency" logicalType="Currency" delayedUpdateModifiedOnly="false" xMLDocComments="Валюта храниться в Enum, а тут только её числовое значение." />
           </generalXpObjectHasFields>
         </fields>
       </xpObject>
@@ -50,6 +39,89 @@
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d1fb8df8-97cb-404d-aa01-5a8e9c7df9a3">
             <field Id="8784dfaa-8e8e-48d4-8a1d-c34d6e204112" name="MessageType" columnType="Int32" displayName="Тип сообщения" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" xMLDocComments="Транслируется с Enum" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="b510f758-5cfd-42f3-87e0-5c0208b850ed">
+      <xpObject Id="fb26026b-82c1-4668-ba27-0ad50cb30348" name="Currency" baseClass="XPLiteObject" userFileName="Currency" designerFileName="Currency.Designer" className="Currency" virtualBaseClass="XPLiteObject" persistent="Balance1" virtualName="Currency">
+        <fields>
+          <generalXpObjectHasFields Id="5166a7d0-e476-43c4-bb65-3c48d1969183">
+            <field Id="ad6c07e4-edd1-4970-8dd5-7f6787909596" name="Id" columnType="Int64" key="true" isIdentity="true" persistent="Id" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="e503d64a-3710-478f-9636-0dcdbe8d0587">
+            <field Id="199acf08-9ca1-4c78-a863-148ff04ebd91" name="Name" displayName="Наименование" persistent="Volume" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="a2d717e4-6844-4d73-89bb-c37bfd3770d2">
+            <field Id="cc016caa-1446-4839-9fa9-110a0c47f13e" name="Symbol" displayName="Код" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="15" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c2597a3f-bbee-49ce-a1ab-fcd9c950672e">
+            <field Id="578468e9-c2d5-45e8-9ad6-532d2df736cf" name="Short" displayName="Кратко" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="5" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="5870e7bd-c74b-4e49-a9ae-a34e6025bd10" sourceCollectionName="Balances" name="BalanceReferencesCurrency" targetFieldName="Currency">
+            <xpObjectMoniker Id="7673fc80-cbc0-430e-9255-548414f68030" />
+          </simpleAssociation>
+          <simpleAssociation Id="b70e283f-cba7-4bd7-9583-144c775023dc" sourceCollectionName="RelationCurrenciesFirst" name="RelationCurrencyReferencesCurrency" targetFieldName="First">
+            <xpObjectMoniker Id="d60e9627-5eca-4cea-84ff-c72a14628ed8" />
+          </simpleAssociation>
+          <simpleAssociation Id="fa9d0fd8-bd2a-40a0-92cc-8f3dd9b58a95" sourceCollectionName="RelationCurrenciesSecond" name="RelationCurrencyReferencesCurrency1" targetFieldName="Second">
+            <xpObjectMoniker Id="d60e9627-5eca-4cea-84ff-c72a14628ed8" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="e22d373b-e739-4214-9680-80e3805e890c">
+            <collectionField Id="ce2d5df0-58db-40f4-b03f-c4fec7c48459" name="Balances" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="95692b2e-8dd2-41e6-aa4a-d66d9de5fab0">
+            <collectionField Id="1daaba5c-f5ea-41c7-80a3-43ce15123f66" name="RelationCurrenciesFirst" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="e56c42aa-204d-47f4-8fb7-ca8bba4855d2">
+            <collectionField Id="ab6dfa97-5c29-4cf0-963b-be81a04a5ba6" name="RelationCurrenciesSecond" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="95c3f0b9-a460-4f18-8ee0-8a5090473379">
+      <xpObject Id="d60e9627-5eca-4cea-84ff-c72a14628ed8" name="RelationCurrency" baseClass="XPLiteObject" userFileName="RelationCurrency" designerFileName="RelationCurrency.Designer" className="RelationCurrency" virtualBaseClass="XPLiteObject" persistent="Balance2" virtualName="RelationCurrency">
+        <fields>
+          <generalXpObjectHasFields Id="77e941c5-b1e2-4ec2-9061-eb6c1f4c7db9">
+            <field Id="84f0d587-d08f-4c94-9b08-01229ca5a97a" name="Id" columnType="Int64" key="true" isIdentity="true" persistent="Id" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="7eb5a756-6df7-49c2-828b-33b9ac2d13ae">
+            <field Id="79255722-8309-40cf-99ee-c8a470d8588f" name="First" columnType="Double" displayName="Первая валюта" persistent="Volume" virtualColumnType="Currency" logicalType="Currency" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="89ca2293-3363-4556-a98c-6e1125da91b9">
+            <field Id="4ef5ae2d-41ff-4a83-a22b-2cfb0704cd46" name="Second" columnType="Int32" displayName="Вторая валюта" virtualColumnType="Currency" logicalType="Currency" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="83a432a7-7731-45df-9fe2-c58b758c805a" sourceCollectionName="ExchangeRates" name="ExchangeRateReferencesRelationCurrency" targetFieldName="CurrencyPair">
+            <xpObjectMoniker Id="cf5ad95d-6617-44dd-afb5-b5f507592060" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="ec827306-0c65-44ac-b759-b33308e43a20">
+            <collectionField Id="80c30209-cb71-4e46-a545-c371b8af09b9" name="ExchangeRates" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="e3889b33-f3a8-43bc-a90d-db36f1f3231c">
+      <xpObject Id="cf5ad95d-6617-44dd-afb5-b5f507592060" name="ExchangeRate" baseClass="XPLiteObject" userFileName="ExchangeRate" designerFileName="ExchangeRate.Designer" className="ExchangeRate" virtualBaseClass="XPLiteObject" persistent="Balance3" virtualName="ExchangeRate">
+        <fields>
+          <generalXpObjectHasFields Id="6b723763-85fc-44e3-8831-bb3bd9283158">
+            <field Id="ca5c8e63-184a-45df-b767-88b03e5779b7" name="Id" columnType="Int64" key="true" isIdentity="true" persistent="Id" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3ca2f134-ecd7-4f39-8366-437dc4769b34">
+            <field Id="f5fea34c-a66a-42b5-a2e4-5659ef8ba58d" name="Date" columnType="DateTime" persistent="Date" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="653bcc65-21d5-430a-be71-e563f8ff56b3">
+            <field Id="7d87cf2b-e808-4b3e-97bf-b692ca11a924" name="Rate" columnType="Double" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2172eeaf-958e-463a-bb46-bf536af539f9">
+            <field Id="2cdf3b96-0fc9-4c87-a42b-b67f1bcb41c4" name="CurrencyPair" virtualColumnType="RelationCurrency" logicalType="RelationCurrency" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
         </fields>
       </xpObject>

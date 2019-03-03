@@ -33,7 +33,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>ExchangeRates.CSharpExample</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
@@ -50,6 +50,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,13 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoinMarketCap.cs" />
+    <Compile Include="CoinMarketCupExample.cs" />
     <Compile Include="CoinMarketTicket.cs" />
+    <Compile Include="Croptonator\CryptonatorApi.cs" />
+    <Compile Include="Croptonator\Ticker.cs" />
     <Compile Include="CurrencyTypeEnum.cs" />
-    <Compile Include="MinerGate\Coins.cs" />
-    <Compile Include="MinerGate\EndPoints.cs" />
-    <Compile Include="MinerGate\MinergateClient.cs" />
-    <Compile Include="MinerGate\Test.cs" />
-    <Compile Include="MinerGate\WebRequests.cs" />
+    <Compile Include="Coins.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Statics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

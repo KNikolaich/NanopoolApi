@@ -65,10 +65,22 @@
       <DependentUpon>Balance.cs</DependentUpon>
     </Compile>
     <Compile Include="ORMDataModelNanopoolCode\ConnectionHelper.cs" />
+    <Compile Include="ORMDataModelNanopoolCode\Currency.cs" />
+    <Compile Include="ORMDataModelNanopoolCode\Currency.Designer.cs">
+      <DependentUpon>Currency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModelNanopoolCode\ExchangeRate.cs" />
+    <Compile Include="ORMDataModelNanopoolCode\ExchangeRate.Designer.cs">
+      <DependentUpon>ExchangeRate.cs</DependentUpon>
+    </Compile>
     <Compile Include="ORMDataModelNanopoolCode\IPersistentBase.cs" />
     <Compile Include="ORMDataModelNanopoolCode\LogHistory.cs" />
     <Compile Include="ORMDataModelNanopoolCode\LogHistory.Designer.cs">
       <DependentUpon>LogHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModelNanopoolCode\RelationCurrency.cs" />
+    <Compile Include="ORMDataModelNanopoolCode\RelationCurrency.Designer.cs">
+      <DependentUpon>RelationCurrency.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

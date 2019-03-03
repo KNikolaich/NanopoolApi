@@ -15,5 +15,7 @@
         dash,
         zcash,
         dogecoin,
+        usd,
+
     }
 }

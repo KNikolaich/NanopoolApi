@@ -1,9 +1,5 @@
 ﻿using System;
 using DevExpress.Xpo;
-using DevExpress.Data.Filtering;
-using System.Collections.Generic;
-using System.ComponentModel;
-using ExchangeRates;
 using NanoDataBase.ORMDataModelNanopoolCode;
 using NanopoolApi.Response;
 
@@ -15,28 +11,21 @@ namespace NanoDataBase.Nanopool
         public Balance(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
 
-        public void Map(FloatValue balanceRaw, CurrencyTypeEnum currency)
+        public void Map(FloatValue balanceRaw, Currency currency)
         {
             Volume = balanceRaw.Data;
             Date = DateTime.Now;
-            EnumCurrencyType = currency;
+            Currency = currency;
         }
 
         public override string ToString()
         {
-            return $"({Id}) {Volume.ToString("N8")} {EnumCurrencyType.ToString()}";
-        }
-
-        
-        [NonPersistent]
-        public CurrencyTypeEnum EnumCurrencyType
-        {
-            get { return (CurrencyTypeEnum)CurrencyType; }
-            set { CurrencyType = (int)value; }
+            return $"({Id}) {Volume.ToString("N8")} {Currency}";
         }
 
         [NonPersistent]
         public bool Status { get; set; }
+        
     }
 
 }

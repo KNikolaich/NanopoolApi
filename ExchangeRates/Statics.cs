@@ -9,7 +9,6 @@ namespace ExchangeRates
 {
     public class Statics
     {
-
         public static readonly string CurrencyTypeeHolder = "<<CurrencyType>>/";
         private static readonly string BaseCoinMarketApiUrl = $"https://api.coinmarketcap.com/v1/";
         public static readonly string TickersFromCoinMarket = BaseCoinMarketApiUrl + $"ticker/{CurrencyTypeeHolder}"; //address

@@ -47,15 +47,16 @@ namespace NanoDataBase.Nanopool
             get { return fVolumeUsd; }
             set { SetPropertyValue<double?>("VolumeUsd", ref fVolumeUsd, value); }
         }
-        int fCurrencyType;
+        Currency fCurrency;
         /// <summary>
         /// Валюта храниться в Enum, а тут только её числовое значение.
         /// </summary>
+        [Association(@"BalanceReferencesCurrency")]
         [DevExpress.Xpo.DisplayName(@"Валюта")]
-        public int CurrencyType
+        public Currency Currency
         {
-            get { return fCurrencyType; }
-            set { SetPropertyValue<int>("CurrencyType", ref fCurrencyType, value); }
+            get { return fCurrency; }
+            set { SetPropertyValue<Currency>("Currency", ref fCurrency, value); }
         }
     }
 
