@@ -22,21 +22,21 @@ namespace NanoDataBase.Nanopool
         {
             new Currency(session)
             {
-                Name = "Доллан",
+                Name = "Доллар",
                 Symbol = "USD",
-                Short = "$"
+                Short = "$."
             }.Save();
             new Currency(session)
             {
                 Name = "Bitcoin",
                 Symbol = "BTC",
-                Short = "B"
+                Short = "btc"
             }.Save();
             new Currency(session)
             {
                 Name = "Monero",
                 Symbol = "XMR",
-                Short = "M"
+                Short = "xmr"
             }.Save();
             new Currency(session)
             {
@@ -49,7 +49,7 @@ namespace NanoDataBase.Nanopool
             {
                 Name = "Рубли",
                 Symbol = "RUB",
-                Short = "р."
+                Short = "₽."
             }.Save();
         }
     }

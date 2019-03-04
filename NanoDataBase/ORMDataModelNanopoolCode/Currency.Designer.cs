@@ -25,7 +25,6 @@ namespace NanoDataBase.Nanopool
         }
         string fName;
         [Size(50)]
-        [Persistent(@"Volume")]
         [DevExpress.Xpo.DisplayName(@"Наименование")]
         public string Name
         {

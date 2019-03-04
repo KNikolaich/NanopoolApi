@@ -19,12 +19,13 @@ namespace NanoMonitor
         readonly Nanopool _nanopoolEth = new Nanopool(Statics.PoolType.ETH);
 
         readonly Nanopool _nanopoolXmr = new Nanopool(Statics.PoolType.XMR);
+        private const string XmrAccount = "4APMf9wHWok1ZmShRWJB8yWvF8ragKFnmUYSVaqzBFGVemgBsos3Lau6XwFEB1vekqKkvn977so1oP8akzNhY93u48wH2kV";
+
         private bool _bShow;
 #if DEBUG
         private static readonly TimeSpan Delay = new TimeSpan(0, 1, 0);
-        private const string XmrAccount = "4APMf9wHWok1ZmShRWJB8yWvF8ragKFnmUYSVaqzBFGVemgBsos3Lau6XwFEB1vekqKkvn977so1oP8akzNhY93u48wH2kV";
 #else
-        private static readonly TimeSpan DELAY = new TimeSpan(1, 0, 0); //задержка
+        private static readonly TimeSpan Delay = new TimeSpan(1, 0, 0); //задержка
 #endif
 
         public PropertyForm()
