@@ -20,25 +20,27 @@ namespace NanoMonitor
             InitializeComponent();
         }
 
-        public Balance Value
+        public List<Balance> Value
         {
             set
             {
-                _lBalabce.Text = value.Volume.ToString("n5");
-                _bPicture.ImageIndex = GetIndex(value.Status);
+                _lBalabce.Text = value.Aggregate("", (current, b) => current + $"{b.Currency.Short}:{b.Volume:F5}{Environment.NewLine}");
+                _bPicture.ImageIndex = GetIndex(value.Select(b=>b.Status).ToList());
             }
         }
 
-        private int GetIndex(bool status)
+        private int GetIndex(List<bool> statuses)
         {
-            if (status)
+            if (statuses.All(s => s)) // все ок
             {
                 return 1;
             }
-            else
+            if(statuses.All(s => !s)) // все не ок
             {
                 return 2;
             }
+            return 0; // смешанные статусы
         }
+
     }
 }

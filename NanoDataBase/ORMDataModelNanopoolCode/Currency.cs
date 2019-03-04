@@ -38,6 +38,12 @@ namespace NanoDataBase.Nanopool
                 Symbol = "XMR",
                 Short = "M"
             }.Save();
+            new Currency(session)
+            {
+                Name = "Ethereum",
+                Symbol = "ETH",
+                Short = "eth"
+            }.Save();
 
             new Currency(session)
             {

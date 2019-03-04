@@ -17,7 +17,7 @@ namespace NanoDataBase.Nanopool
     public partial class Balance : XPLiteObject
     {
         long fId;
-        [Key]
+        [Key(true)]
         public long Id
         {
             get { return fId; }
@@ -37,20 +37,8 @@ namespace NanoDataBase.Nanopool
             get { return fDate; }
             set { SetPropertyValue<DateTime>("Date", ref fDate, value); }
         }
-        double? fVolumeUsd;
-        /// <summary>
-        /// Объем сохраняется для истории по курсу на момент сохранения записи
-        /// </summary>
-        [DevExpress.Xpo.DisplayName(@"Объем в USD")]
-        public double? VolumeUsd
-        {
-            get { return fVolumeUsd; }
-            set { SetPropertyValue<double?>("VolumeUsd", ref fVolumeUsd, value); }
-        }
         Currency fCurrency;
-        /// <summary>
-        /// Валюта храниться в Enum, а тут только её числовое значение.
-        /// </summary>
+        [Persistent(@"CurrencyId")]
         [Association(@"BalanceReferencesCurrency")]
         [DevExpress.Xpo.DisplayName(@"Валюта")]
         public Currency Currency

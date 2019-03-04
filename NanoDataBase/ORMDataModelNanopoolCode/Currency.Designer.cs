@@ -14,7 +14,6 @@ using System.ComponentModel;
 namespace NanoDataBase.Nanopool
 {
 
-    [Persistent(@"Currency")]
     public partial class Currency : XPLiteObject
     {
         long fId;
@@ -52,9 +51,9 @@ namespace NanoDataBase.Nanopool
         [Association(@"BalanceReferencesCurrency")]
         public XPCollection<Balance> Balances { get { return GetCollection<Balance>("Balances"); } }
         [Association(@"RelationCurrencyReferencesCurrency")]
-        public XPCollection<RelationCurrency> RelationCurrenciesFirst { get { return GetCollection<RelationCurrency>("RelationCurrenciesFirst"); } }
+        public XPCollection<CurrencyPair> RelationCurrenciesFirst { get { return GetCollection<CurrencyPair>("RelationCurrenciesFirst"); } }
         [Association(@"RelationCurrencyReferencesCurrency1")]
-        public XPCollection<RelationCurrency> RelationCurrenciesSecond { get { return GetCollection<RelationCurrency>("RelationCurrenciesSecond"); } }
+        public XPCollection<CurrencyPair> RelationCurrenciesSecond { get { return GetCollection<CurrencyPair>("RelationCurrenciesSecond"); } }
     }
 
 }

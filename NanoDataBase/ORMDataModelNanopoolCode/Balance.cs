@@ -25,7 +25,9 @@ namespace NanoDataBase.Nanopool
 
         [NonPersistent]
         public bool Status { get; set; }
-        
+
+        [NonPersistent]
+        public double? VolumeUsd { get; set; }
     }
 
 }

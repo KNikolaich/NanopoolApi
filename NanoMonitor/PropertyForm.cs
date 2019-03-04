@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
+using System.Linq;
 using System.Windows.Forms;
 using ExchangeRates;
 using NanoDataBase;
@@ -14,12 +16,15 @@ namespace NanoMonitor
 {
     public partial class PropertyForm : Form
     {
-        Nanopool nanopool = new Nanopool(Statics.PoolType.ETH);
+        readonly Nanopool _nanopoolEth = new Nanopool(Statics.PoolType.ETH);
+
+        readonly Nanopool _nanopoolXmr = new Nanopool(Statics.PoolType.XMR);
         private bool _bShow;
 #if DEBUG
-        private readonly TimeSpan DELAY = new TimeSpan(0, 0, 15); //задержка
+        private static readonly TimeSpan Delay = new TimeSpan(0, 1, 0);
+        private const string XmrAccount = "4APMf9wHWok1ZmShRWJB8yWvF8ragKFnmUYSVaqzBFGVemgBsos3Lau6XwFEB1vekqKkvn977so1oP8akzNhY93u48wH2kV";
 #else
-        private readonly TimeSpan DELAY = new TimeSpan(1, 0, 0); //задержка
+        private static readonly TimeSpan DELAY = new TimeSpan(1, 0, 0); //задержка
 #endif
 
         public PropertyForm()
@@ -33,7 +38,7 @@ namespace NanoMonitor
 
 
             _lAddressDb.Text = Domain.GetAddressDb();
-            _timerRefreshData.Interval = (int) DELAY.TotalMilliseconds;
+            _timerRefreshData.Interval = (int) Delay.TotalMilliseconds;
             _timerRefreshData.Start();
             LogHolder.MessageLogEventHandler += LogHolder_MessageLogEventHandler;
             base.OnLoad(e);
@@ -45,7 +50,7 @@ namespace NanoMonitor
             {
                 var balance = SaveBalance();
 
-                if (balance.Status)
+                if (balance.All(b => b.Status))
                 {
                     LogHolder.MainLogInfo(_tbBalance.Text);
                 }
@@ -54,15 +59,8 @@ namespace NanoMonitor
                     LogHolder.MainLogWarning(_tbBalance.Text);
                 
                 }
-                var volumeUsd = balance.VolumeUsd;
-                if (volumeUsd != null)
-                {
-                    _notifyIcon1.Text = volumeUsd.Value.ToString("n3") + "$";
-                }
-                else
-                {
-                    _notifyIcon1.Text = "Подключенья нет";
-                }
+                var volumeUsd = balance.Aggregate("", (current, b) => current + $"{b.Currency.Short}:{b.Volume:F5}{Environment.NewLine}");
+                _notifyIcon1.Text = !string.IsNullOrEmpty(volumeUsd) ? volumeUsd : "Подключенья нет";
             }
             catch (Exception ex)
             {
@@ -97,22 +95,26 @@ namespace NanoMonitor
                 statusForm.Value = SaveBalance();
                 if (statusForm.ShowDialog() == DialogResult.OK)
                 {
-                    //var charts = nanopool.GetWorkersAverageHashrate(_tbAddress.Text);
+                    //var charts = nanopoolEth.GetWorkersAverageHashrate(_tbAddress.Text);
                 }
             }
         }
         
-        private Balance SaveBalance()
+        private List<Balance> SaveBalance()
         {
-            var balance = nanopool.GetAccountBalance(_tbAddress.Text);
-            
-            string infoArray;
-            var lastBalance = Domain.SaveBalance(balance, DELAY, CurrencyTypeEnum.ethereum, out infoArray);
+            var balanceEth = _nanopoolEth.GetAccountBalance(_tbAddress.Text);
+
+            var result = new List<Balance>();
+            string infoArray = "";
+            result.Add(Domain.SaveBalance(balanceEth, Delay, CurrencyTypeEnum.ethereum, ref infoArray));
+            var balanceXmr = _nanopoolXmr.GetAccountBalance(XmrAccount);
+
+            result.Add(Domain.SaveBalance(balanceXmr, Delay, CurrencyTypeEnum.monero, ref infoArray));
             if (!string.IsNullOrEmpty(infoArray))
             {
                 _tbBalance.Text = infoArray;
             }
-            return lastBalance;
+            return result;
         }
 
         private void _settingToolStripMenuItem_Click(object sender, EventArgs e)

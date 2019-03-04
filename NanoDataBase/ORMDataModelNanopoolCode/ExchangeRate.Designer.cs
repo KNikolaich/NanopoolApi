@@ -14,7 +14,6 @@ using System.ComponentModel;
 namespace NanoDataBase.Nanopool
 {
 
-    [Persistent(@"ExchangeRate")]
     public partial class ExchangeRate : XPLiteObject
     {
         long fId;
@@ -36,12 +35,13 @@ namespace NanoDataBase.Nanopool
             get { return fRate; }
             set { SetPropertyValue<double>("Rate", ref fRate, value); }
         }
-        RelationCurrency fCurrencyPair;
+        CurrencyPair fCurrencyPair;
+        [Persistent(@"CurrencyPairId")]
         [Association(@"ExchangeRateReferencesRelationCurrency")]
-        public RelationCurrency CurrencyPair
+        public CurrencyPair CurrencyPair
         {
             get { return fCurrencyPair; }
-            set { SetPropertyValue<RelationCurrency>("CurrencyPair", ref fCurrencyPair, value); }
+            set { SetPropertyValue<CurrencyPair>("CurrencyPair", ref fCurrencyPair, value); }
         }
     }
 

@@ -42,9 +42,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 16);
+            this.label1.Size = new System.Drawing.Size(71, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Баланс:";
             // 
@@ -52,19 +53,21 @@
             // 
             this._lBalabce.AutoSize = true;
             this._lBalabce.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._lBalabce.Location = new System.Drawing.Point(65, 13);
+            this._lBalabce.Location = new System.Drawing.Point(99, 16);
+            this._lBalabce.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lBalabce.Name = "_lBalabce";
-            this._lBalabce.Size = new System.Drawing.Size(108, 19);
+            this._lBalabce.Size = new System.Drawing.Size(133, 48);
             this._lBalabce.TabIndex = 1;
-            this._lBalabce.Text = "Недоступен";
+            this._lBalabce.Text = "Недоступен\r\nНедоступен";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(12, 49);
+            this.label3.Location = new System.Drawing.Point(20, 103);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
+            this.label3.Size = new System.Drawing.Size(67, 21);
             this.label3.TabIndex = 0;
             this.label3.Text = "Статус:";
             // 
@@ -76,9 +79,10 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(15, 74);
+            this.button1.Location = new System.Drawing.Point(20, 134);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 26);
+            this.button1.Size = new System.Drawing.Size(234, 32);
             this.button1.TabIndex = 0;
             this.button1.Text = "Ладно";
             this.button1.UseVisualStyleBackColor = true;
@@ -88,9 +92,10 @@
             this._bPicture.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this._bPicture.ImageIndex = 0;
             this._bPicture.ImageList = this.imageList1;
-            this._bPicture.Location = new System.Drawing.Point(148, 49);
+            this._bPicture.Location = new System.Drawing.Point(221, 99);
+            this._bPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._bPicture.Name = "_bPicture";
-            this._bPicture.Size = new System.Drawing.Size(25, 25);
+            this._bPicture.Size = new System.Drawing.Size(33, 31);
             this._bPicture.TabIndex = 2;
             this._bPicture.UseVisualStyleBackColor = true;
             // 
@@ -104,15 +109,16 @@
             // 
             // StatusForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(185, 109);
+            this.ClientSize = new System.Drawing.Size(270, 177);
             this.ControlBox = false;
             this.Controls.Add(this._bPicture);
             this.Controls.Add(this.button1);
             this.Controls.Add(this._lBalabce);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "StatusForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Результат зароса";

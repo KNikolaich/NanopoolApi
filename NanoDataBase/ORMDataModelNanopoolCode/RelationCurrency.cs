@@ -9,9 +9,9 @@ using NanoDataBase.ORMDataModelNanopoolCode;
 namespace NanoDataBase.Nanopool
 {
 
-    public partial class RelationCurrency : IPersistentBase
+    public partial class CurrencyPair : IPersistentBase
     {
-        public RelationCurrency(Session session) : base(session) { }
+        public CurrencyPair(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
 
         public override string ToString()
@@ -23,21 +23,26 @@ namespace NanoDataBase.Nanopool
         {
             var listCurr = Domain.GetCollectionXpObj<Currency>();
 
-            var usdCurr = listCurr.FirstOrDefault(curr => curr.Name == "USD");
-            new RelationCurrency(session)
+            var usdCurr = listCurr.FirstOrDefault(curr => curr.Symbol == "USD");
+            new CurrencyPair(session)
             {
-                First = listCurr.FirstOrDefault(curr => curr.Name == "BTC"),
+                First = listCurr.FirstOrDefault(curr => curr.Symbol == "BTC"),
                 Second = usdCurr,
             }.Save();
-            new RelationCurrency(session)
+            new CurrencyPair(session)
             {
-                First = listCurr.FirstOrDefault(curr => curr.Name == "XMR"),
+                First = listCurr.FirstOrDefault(curr => curr.Symbol == "XMR"),
                 Second = usdCurr,
             }.Save();
-            new RelationCurrency(session)
+            new CurrencyPair(session)
+            {
+                First = listCurr.FirstOrDefault(curr => curr.Symbol == "ETH"),
+                Second = usdCurr,
+            }.Save();
+            new CurrencyPair(session)
             {
                 First = usdCurr,
-                Second = listCurr.FirstOrDefault(curr => curr.Name == "RUB"),
+                Second = listCurr.FirstOrDefault(curr => curr.Symbol == "RUB"),
             }.Save();
         }
     }
