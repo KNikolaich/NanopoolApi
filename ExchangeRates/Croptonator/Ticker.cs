@@ -9,6 +9,11 @@ namespace ExchangeRates.Croptonator
         public string timestamp { get; set; }
         public bool success { get; set; }
         public string error { get; set; }
+
+        public override string ToString()
+        {
+            return $"{ticker} ({timestamp})";
+        }
     }
 
     public class Ticker
@@ -19,5 +24,10 @@ namespace ExchangeRates.Croptonator
         public double price { get; set; }
         public double volume { get; set; }
         public double change { get; set; }
+
+        public override string ToString()
+        {
+            return $"Base:{Base} target:{target} price:{price}";
+        }
     }
 }

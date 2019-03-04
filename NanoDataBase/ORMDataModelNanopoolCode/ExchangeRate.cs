@@ -18,7 +18,7 @@ namespace NanoDataBase.Nanopool
 
         public override string ToString()
         {
-            return $"{CurrencyPair} на дату {Date} = {Rate:F2}";
+            return $"{Date}: {Rate:F2} {CurrencyPair.Second?.Short} за {CurrencyPair.First?.Short} ";
         }
 
 

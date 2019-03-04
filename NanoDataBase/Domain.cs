@@ -101,10 +101,9 @@ namespace NanoDataBase
 
                 if (firstExchangeRate == null || firstExchangeRate.Date.AddHours(1) < DateTime.Now)
                 {
-                    string error = "";
                     var tickerContayner =
                         new ExchangeRates.Croptonator.CryptonatorApi().TickerContayner(
-                            $"{pairCurr.First.Symbol}-{pairCurr.Second.Symbol}", ref error);
+                            $"{pairCurr.First.Symbol}-{pairCurr.Second.Symbol}", out var error);
 
                     if (!string.IsNullOrEmpty(error))
                     {
@@ -121,6 +120,7 @@ namespace NanoDataBase
                             Rate = ticker.price
                         };
                         exRate.Save();
+                        errors.AppendLine(exRate.ToString());
                     }
                 }
 

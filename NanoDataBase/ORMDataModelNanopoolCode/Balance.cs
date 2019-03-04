@@ -20,7 +20,7 @@ namespace NanoDataBase.Nanopool
 
         public override string ToString()
         {
-            return $"({Id}) {Volume.ToString("N8")} {Currency}";
+            return $"({Date.ToString("g")}) {Volume.ToString("N8")} {Currency.Symbol}";
         }
 
         [NonPersistent]
