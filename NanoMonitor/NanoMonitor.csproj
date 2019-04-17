@@ -57,6 +57,7 @@
     <Compile Include="EmptyForm.Designer.cs">
       <DependentUpon>EmptyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PoolDomain.cs" />
     <Compile Include="PropertyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,7 +107,7 @@
       <Name>ExchangeRates</Name>
     </ProjectReference>
     <ProjectReference Include="..\NanoDataBase\NanoDataBase.csproj">
-      <Project>{02f0ebcb-2be2-4023-8d6e-eb0efa0d9a88}</Project>
+      <Project>{02F0EBCB-2BE2-4023-8D6E-EB0EFA0D9A88}</Project>
       <Name>NanoDataBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\NanopoolApi\NanopoolApi.csproj">

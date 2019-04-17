@@ -7,26 +7,16 @@ using ExchangeRates;
 using NanoDataBase;
 using NanoDataBase.Logging;
 using NanoDataBase.Nanopool;
-using NanopoolApi;
-using NanopoolApi.Response;
 using NLog;
-using Statics = NanopoolApi.Statics;
 
 namespace NanoMonitor
 {
     public partial class PropertyForm : Form
     {
-        readonly Nanopool _nanopoolEth = new Nanopool(Statics.PoolType.ETH);
-
-        readonly Nanopool _nanopoolXmr = new Nanopool(Statics.PoolType.XMR);
-        private const string XmrAccount = "4APMf9wHWok1ZmShRWJB8yWvF8ragKFnmUYSVaqzBFGVemgBsos3Lau6XwFEB1vekqKkvn977so1oP8akzNhY93u48wH2kV";
-
+        PoolDomain _pd = new PoolDomain();
+        
         private bool _bShow;
-#if DEBUG
-        private static readonly TimeSpan Delay = new TimeSpan(0, 1, 0);
-#else
-        private static readonly TimeSpan Delay = new TimeSpan(1, 0, 0); //задержка
-#endif
+
 
         public PropertyForm()
         {
@@ -35,40 +25,14 @@ namespace NanoMonitor
 
         protected override void OnLoad(EventArgs e)
         {
-            LoadTextNotify();
-
+            _pd.TrySaveBalance();
+            _pd.StartThread(components);
 
             _lAddressDb.Text = Domain.GetAddressDb();
-            _timerRefreshData.Interval = (int) Delay.TotalMilliseconds;
-            _timerRefreshData.Start();
+            
             LogHolder.MessageLogEventHandler += LogHolder_MessageLogEventHandler;
             base.OnLoad(e);
         }
-
-        private void LoadTextNotify()
-        {
-            try
-            {
-                var balance = SaveBalance();
-
-                if (balance.All(b => b.Status))
-                {
-                    LogHolder.MainLogInfo(_tbBalance.Text);
-                }
-                else
-                {
-                    LogHolder.MainLogWarning(_tbBalance.Text);
-                
-                }
-                var volumeUsd = balance.Aggregate("", (current, b) => current + $"{b.Currency.Short}:{b.Volume:F5}{Environment.NewLine}");
-                _notifyIcon1.Text = !string.IsNullOrEmpty(volumeUsd) ? volumeUsd : "Подключенья нет";
-            }
-            catch (Exception ex)
-            {
-                LogHolder.LogError(ex);
-            }
-        }
-
 
         private void LogHolder_MessageLogEventHandler(object sender, LogEventInfo e)
         {
@@ -82,9 +46,9 @@ namespace NanoMonitor
         {
             if (logLevel == LogLevel.Error)
                 return ToolTipIcon.Error;
-            else if (logLevel == LogLevel.Info)
+            if (logLevel == LogLevel.Info)
                 return ToolTipIcon.Info;
-            else if (logLevel == LogLevel.Warn)
+            if (logLevel == LogLevel.Warn)
                 return ToolTipIcon.Warning;
             return ToolTipIcon.None;
         }
@@ -93,7 +57,7 @@ namespace NanoMonitor
         {
             using (StatusForm statusForm = new StatusForm())
             {
-                statusForm.Value = SaveBalance();
+                statusForm.Value = _pd.TrySaveBalance();
                 if (statusForm.ShowDialog() == DialogResult.OK)
                 {
                     //var charts = nanopoolEth.GetWorkersAverageHashrate(_tbAddress.Text);
@@ -101,22 +65,6 @@ namespace NanoMonitor
             }
         }
         
-        private List<Balance> SaveBalance()
-        {
-            var balanceEth = _nanopoolEth.GetAccountBalance(_tbAddress.Text);
-
-            var result = new List<Balance>();
-            string infoArray = "";
-            result.Add(Domain.SaveBalance(balanceEth, Delay, CurrencyTypeEnum.ethereum, ref infoArray));
-            var balanceXmr = _nanopoolXmr.GetAccountBalance(XmrAccount);
-
-            result.Add(Domain.SaveBalance(balanceXmr, Delay, CurrencyTypeEnum.monero, ref infoArray));
-            if (!string.IsNullOrEmpty(infoArray))
-            {
-                _tbBalance.Text = infoArray;
-            }
-            return result;
-        }
 
         private void _settingToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -153,12 +101,7 @@ namespace NanoMonitor
             //Hide();
             ShowOrHide();
         }
-
-        private void _timerRefreshData_Tick(object sender, EventArgs e)
-        {
-            LoadTextNotify();
-        }
-
+        
         private void notifyIcon1_DoubleClick(object sender, EventArgs e)
         {
             ShowOrHide();

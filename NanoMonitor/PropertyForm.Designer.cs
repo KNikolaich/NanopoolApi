@@ -38,7 +38,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._timerRefreshData = new System.Windows.Forms.Timer(this.components);
             this._tbBalance = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -58,7 +57,7 @@
             this._tbAddress.ReadOnly = true;
             this._tbAddress.Size = new System.Drawing.Size(342, 20);
             this._tbAddress.TabIndex = 0;
-            this._tbAddress.Text = "0x13c90C011E0524793561dE63F2809Eb6723eb195";
+            this._tbAddress.Text = "адрес тут не уместен";
             // 
             // label1
             // 
@@ -122,12 +121,7 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.exitToolStripMenuItem.Text = "Выход.";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // _timerRefreshData
-            // 
-            this._timerRefreshData.Enabled = true;
-            this._timerRefreshData.Interval = 600000;
-            this._timerRefreshData.Tick += new System.EventHandler(this._timerRefreshData_Tick);
+
             // 
             // _tbBalance
             // 
@@ -224,7 +218,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem _settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Timer _timerRefreshData;
+        
         private System.Windows.Forms.TextBox _tbBalance;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
