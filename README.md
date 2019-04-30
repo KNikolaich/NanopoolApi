@@ -1,10 +1,2 @@
-[![NuGet](https://img.shields.io/nuget/v/Apparent.Nanopool.Api.svg)](https://www.nuget.org/packages/Apparent.Nanopool.Api)
-
-# NanopoolApi
-Wrapper for the Nanopool API, built in C#
-
-## How to install
-* Run:
-```
-Install-Package Apparent.Nanopool.Api
-```
+Приложение делает запросы к пулу nonapool и сохраняет данные о текущем состоянии/статусе в локальную БД.
+Так же делает запросы к финансовым серверам для получения данных о курсах тех валют, которые участвуют в первом запросе. Данные по курсам так же сохраняются для получения в дальнейшем картины "среза", отвечающего на вопрос, как изменялось благосотояние владельца счета в пуле с течением времени и с учетом разницы курсов валют.
