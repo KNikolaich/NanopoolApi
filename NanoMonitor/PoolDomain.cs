@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace NanoMonitor
         readonly Nanopool _nanopoolXmr = new Nanopool(Statics.PoolType.XMR);
 
         private const string XmrAccount = "4APMf9wHWok1ZmShRWJB8yWvF8ragKFnmUYSVaqzBFGVemgBsos3Lau6XwFEB1vekqKkvn977so1oP8akzNhY93u48wH2kV";
-        private const string EthAccount = "0x13c90C011E0524793561dE63F2809Eb6723eb195";
+        private const string EthAccount = "0x85cFc2bBb112De8c36401F61041D14b2B97b66c0";
 
 #if DEBUG
         private static readonly TimeSpan Delay = new TimeSpan(0, 1, 0);
@@ -54,20 +55,30 @@ namespace NanoMonitor
             try
             {
                 balance = SaveBalance();
-
+                var averageHashrate = _nanopoolXmr.GetAverageHashrate(XmrAccount);
+                if (averageHashrate.Status && Equals(averageHashrate.Data.H1, 0f))
+                {
+                    RestastMiner();
+                }
                 //if (balance.All(b => b.Status))
                 //{
                 //    LogHolder.MainLogWarning(_tbBalance.Text);
                 //}
                 var volumeUsd = balance.Aggregate("",
                     (current, b) => current + $"{b.Currency.Short}:{b.Volume:F5}{Environment.NewLine}");
-                LogHolder.MainLogWarning(!string.IsNullOrEmpty(volumeUsd) ? volumeUsd : "Подключенья нет");
+                //LogHolder.MainLogWarning(!string.IsNullOrEmpty(volumeUsd) ? volumeUsd : "Подключенья нет");
             }
             catch (Exception ex)
             {
                 LogHolder.LogError(ex);
             }
             return balance;
+        }
+
+        private void RestastMiner()
+        {
+            Process.Start("RestartXmr.bat");
+            LogHolder.MainLogInfo("Restart Xmr Miner");
         }
 
 
